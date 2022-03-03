@@ -1,0 +1,73 @@
+.welcome__container {
+  width: 1920px;
+  height: 1080px;
+  left: 0px;
+  top: 0px;
+  background: radial-gradient(50% 50% at 50% 50%, #0c0d0e 0%, #151718 73.44%);
+  mix-blend-mode: normal;
+}
+
+.additionalStars {
+  position: absolute;
+  width: 433.63px;
+  height: 511.5px;
+  left: 0px;
+  top: 18px;
+}
+
+.welcome__text {
+  position: absolute;
+  width: 1090px;
+  height: 212px;
+  left: 434px;
+  top: 175px;
+  font-family: Rowdies;
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 119px;
+  display: flex;
+  size: 96px;
+  align-items: center;
+  justify-content: center;
+  color: #fe3b1f;
+}
+
+.button__start,
+.button__submitted {
+  position: absolute;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 24px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.button__start {
+  width: 395px;
+  height: 79px;
+  left: 754px;
+  top: 492px;
+  background-color: #fe3b1f;
+  text-align: center;
+  border-radius: 100px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+.button__submitted {
+  width: 338px;
+  height: 66px;
+  left: 795px;
+  top: 589px;
+  line-height: 29px;
+  text-decoration-line: underline;
+  background: none;
+}
+
+.rocketman {
+  position: absolute;
+  height: auto;
+  width: 531px;
+  height: auto;
+  left: 662px;
+  top: 611.88px;
+}
