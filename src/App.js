@@ -1,9 +1,20 @@
 import Welcome from "./components/Welcome/Welcome";
+import PersonalInformation from "./components/PersonalInformation/PersonalInformation";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Routes,
+} from "react-router-dom";
+
 function App() {
   return (
-    <>
-      <Welcome />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="Personal-Information" element={<PersonalInformation />} />
+      </Routes>
+    </Router>
   );
 }
 
