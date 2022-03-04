@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import styles from "./PersonalInformation.module.css";
 import Balls from "../assets/balls.svg";
-import Next from "../assets/Next.svg";
+import PersonalInfoForm from "./PersonalInfoForm";
 import Previous from "../assets/Previous.svg";
+
 const PersonalInformation = () => {
   return (
     <>
@@ -22,52 +23,12 @@ const PersonalInformation = () => {
             for a yet to be born company was inspired - Redberry 😇
           </p>
         </div>
-        <div>
-          <form>
-            <div>
-              <input
-                type="text"
-                className={styles.name}
-                placeholder="First Name"
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                className={styles.LastName}
-                placeholder="Last Name"
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                className={styles.email}
-                placeholder="E Mail"
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="tel"
-                className={styles.number}
-                placeholder="+995 5_ _ _ _"
-                minLength="13"
-              />
-            </div>
-          </form>
-        </div>
+        <PersonalInfoForm />
         <div>
           <img
             src={Balls}
             alt="pagination balls"
             className={styles["pagination__balls"]}
-          />
-          <img
-            src={Next}
-            alt="pagination ball"
-            className={styles["pagination__next"]}
           />
           <Link to={"/"}>
             <img

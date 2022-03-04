@@ -1,0 +1,15 @@
+.error__name {
+  position: absolute;
+  width: 302px;
+  height: 16px;
+  left: 290px;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: #fe3b1f;
+}

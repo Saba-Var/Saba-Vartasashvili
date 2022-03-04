@@ -72,14 +72,7 @@
   letter-spacing: 0.05em;
   color: #ffffff;
 }
-.pagination__next {
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  left: 554px;
-  top: 900px;
-  cursor: pointer;
-}
+
 .pagination__balls {
   position: absolute;
   width: 155px;
@@ -93,82 +86,4 @@
   height: 22px;
   left: 340px;
   top: 900px;
-}
-.name {
-  position: absolute;
-  width: 455px;
-  height: 54px;
-  left: 235px;
-  top: 390px;
-  padding-left: 57px;
-  font-size: 18px;
-  color: #212121;
-}
-
-.LastName {
-  position: absolute;
-  font-size: 18px;
-  width: 455px;
-  height: 54px;
-  left: 235px;
-  top: 481px;
-  padding-left: 57px;
-}
-.email {
-  position: absolute;
-  width: 455px;
-  height: 54px;
-  font-size: 18px;
-  left: 235px;
-  top: 570px;
-  padding-left: 57px;
-}
-.number {
-  position: absolute;
-  width: 455px;
-  font-size: 18px;
-  height: 54px;
-  left: 235px;
-  top: 675px;
-  padding-left: 57px;
-}
-.LastName::-webkit-input-placeholder {
-  font-family: Montserrat;
-  font-style: italic;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  display: flex;
-  align-items: center;
-  color: #454545;
-}
-.email::-webkit-input-placeholder {
-  font-family: Montserrat;
-  font-style: italic;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  display: flex;
-  align-items: center;
-  color: #454545;
-}
-.number::-webkit-input-placeholder {
-  font-family: Montserrat;
-  font-style: italic;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  display: flex;
-  align-items: center;
-  color: #454545;
-}
-.name::-webkit-input-placeholder {
-  font-family: Montserrat;
-  font-style: italic;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  display: flex;
-  align-items: center;
-  color: #454545;
 }
