@@ -1,8 +1,26 @@
+import { useEffect, useState } from "react";
 import styles from "./SkillsForm.module.css";
 import DropdownArrow from "../../assets/DrowpdownArrow.svg";
 import ballsSkills from "../../assets/balls-Skills.svg";
 import AddButton from "./AddButton";
 const SkillsForm = (props) => {
+  const [skillsList, setSkillsList] = useState([]);
+
+  useEffect(() => {
+    async function getSkillsList() {
+      try {
+        const response = await fetch(
+          "https://bootcamp-2022.devtest.ge/api/skills"
+        );
+        const data = await response.json();
+        setSkillsList(data);
+      } catch (error) {
+        alert(error.message + " skills");
+      }
+    }
+    getSkillsList();
+  }, []);
+
   return (
     <div>
       <img
@@ -13,14 +31,11 @@ const SkillsForm = (props) => {
       <form className={styles.form}>
         <select>
           <option value="Skills">Skills</option>
-          <option value="">option1</option>
-          <option value="">option2</option>
-          <option value="">option3</option>
-          <option value="">option4</option>
-          <option value="">option5</option>
-          <option value="">option6</option>
-          <option value="">option7</option>
-          <option value="">option8</option>
+          {skillsList.map((skill) => (
+            <option key={skill.id} value={`${skill.title}`}>
+              {skill.title}
+            </option>
+          ))}
         </select>
 
         <div>
