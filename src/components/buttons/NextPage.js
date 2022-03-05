@@ -7,6 +7,7 @@ const NextPage = (props) => {
         src={Next}
         alt="pagination ball"
         className={styles["pagination__next"]}
+        style={{ top: `${props.top}`, left: `${props.left}` }}
       />
     </button>
   );

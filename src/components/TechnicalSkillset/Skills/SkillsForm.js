@@ -6,6 +6,10 @@ import AddButton from "./AddButton";
 import SkillSet from "./Skillset";
 import Context from "../../store/context";
 import NextPageLink from "../../buttons/NextPageLink";
+import NextPage from "../../buttons/NextPage";
+import PreviousButton from "../../assets/Previous.svg";
+import { Link } from "react-router-dom";
+
 const SkillsForm = (props) => {
   const userData = useContext(Context);
   const [skillsList, setSkillsList] = useState([]);
@@ -13,7 +17,11 @@ const SkillsForm = (props) => {
   const [years, setYears] = useState("");
   const [items, setItems] = useState([]);
   const [allSkillsArray, setAllSkillsArray] = useState([]);
+  const [error, setError] = useState(false);
+  const [inputError, setInputError] = useState(false);
+  const [skillError, setSkillError] = useState(false);
   let arr = [];
+
   for (const key in skillsList) {
     arr.push(skillsList[key].title);
   }
@@ -44,7 +52,12 @@ const SkillsForm = (props) => {
   //form submit
   const submitHandler = (e) => {
     e.preventDefault();
-    if (!allSkillsArray.includes(selectedSkill) && years !== "") {
+    if (
+      !allSkillsArray.includes(selectedSkill) &&
+      years !== "" &&
+      selectedSkill !== ""
+    ) {
+      setError(false);
       setAllSkillsArray((prevState) => {
         return [...prevState, selectedSkill];
       });
@@ -62,17 +75,30 @@ const SkillsForm = (props) => {
           },
         ];
       });
+    } else {
+      setError(true);
     }
+    years ? setInputError(false) : setInputError(true);
+    selectedSkill ? setSkillError(false) : setSkillError(true);
   };
+
   return (
     <div>
+      {error && (
+        <p
+          className={styles.errorMessage}
+        >{`* input field is empty or skill selected twice`}</p>
+      )}
       <img
         src={DropdownArrow}
         alt="dropdown arrow"
         className={styles["dropdown__arrow"]}
       />
       <form className={styles.form} onSubmit={submitHandler}>
-        <select onChange={selectHandler}>
+        <select
+          onChange={selectHandler}
+          className={`${skillError && styles["red__border"]}`}
+        >
           <option selected defaultValue disabled hidden>
             Skills
           </option>
@@ -84,8 +110,11 @@ const SkillsForm = (props) => {
         </select>
         <div>
           <input
+            id="inputSkills"
             onChange={inputHandler}
-            className={styles.experience}
+            className={`${styles.experience} ${
+              inputError && styles["red__border"]
+            }`}
             type="number"
             placeholder="Experience Duration in Years"
             min={1}
@@ -105,7 +134,17 @@ const SkillsForm = (props) => {
         src={ballsSkills}
         alt="pagination balls"
       />
-      <NextPageLink path="/" />
+      {allSkillsArray.length > 1 && (
+        <NextPageLink path="/" top={"888px"} left={"521px"} />
+      )}
+      {allSkillsArray.length < 2 && <NextPage top={"888px"} left={"521px"} />}
+      <Link to="/Personal-Information">
+        <img
+          className={styles.btnPrev}
+          src={PreviousButton}
+          alt="pagination button"
+        />
+      </Link>
     </div>
   );
 };
