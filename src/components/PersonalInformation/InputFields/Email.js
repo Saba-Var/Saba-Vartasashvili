@@ -16,12 +16,18 @@ const Email = (props) => {
         type="email"
         className={`${styles.email} ${
           props.emailError && styles["red__border"]
-        }`}
+        } ${props.lowAmountEmail && styles["red__border"]}`}
         placeholder="E Mail"
         value={userData.email}
         noValidate
       />
-      {props.emailError && <Error top={top} text="* invalid email" />}
+      {props.lowAmountEmail && <Error top={top} text="* email is required" />}
+      {props.emailError && (
+        <Error
+          top={top}
+          text="* invalid email! follow this format: example@gmail.com"
+        />
+      )}
     </>
   );
 };

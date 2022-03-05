@@ -23,6 +23,7 @@ const PersonalInfoForm = () => {
 
   //Email
   const [emailError, setEmailError] = useState("");
+  const [lowAmountEmail, setLowAmountEmail] = useState("");
 
   //Phone Number
   const [number, setNumber] = useState("");
@@ -47,12 +48,23 @@ const PersonalInfoForm = () => {
       : setNameRequiredLast(false);
 
     //validate Email
-    !userData.email.includes(".") || !userData.email.includes("@")
-      ? setEmailError(true)
-      : setEmailError(false);
-    userData.email.indexOf("@") > userData.email.indexOf(".")
-      ? setEmailError(true)
-      : setEmailError(false);
+    const emailIncludes =
+      userData.email.includes(".") || userData.email.includes("@");
+    if (userData.email.length > 0) {
+      !emailIncludes ? setEmailError(true) : setEmailError(false);
+
+      if (emailIncludes) {
+        userData.email.indexOf("@") > userData.email.indexOf(".")
+          ? setEmailError(true)
+          : setEmailError(false);
+      }
+    }
+    if (userData.email.length === 0)
+      userData.email.length === 0
+        ? setLowAmountEmail(true)
+        : setLowAmountEmail(false);
+
+    if (userData.email.length === 0) setEmailError(false);
 
     //validate Phone Number
     !userData.phoneNumber.includes("+995") || userData.phoneNumber.length !== 13
@@ -70,6 +82,7 @@ const PersonalInfoForm = () => {
     !/\d/.test(userData.lastName) &&
     userData.lastName.length >= 2 &&
     !regExp.test(userData.phoneNumber) &&
+    userData.email.length !== 0 &&
     userData.email.includes(".") &&
     userData.email.includes("@") &&
     userData.email.includes("@") &&
@@ -92,7 +105,7 @@ const PersonalInfoForm = () => {
         lowAmountLast={lowAmountLast}
         nameRequiredLast={nameRequiredLast}
       />
-      <Email emailError={emailError} />
+      <Email emailError={emailError} lowAmountEmail={lowAmountEmail} />
       <PhoneNumber number={number} />
       {route}
     </form>
