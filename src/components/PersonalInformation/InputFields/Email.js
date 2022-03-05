@@ -2,6 +2,7 @@ import Context from "../../store/context";
 import { useContext } from "react";
 import Error from "../Error/Error";
 import styles from "./Email.module.css";
+
 const Email = (props) => {
   const top = "632px";
   const userData = useContext(Context);

@@ -4,6 +4,8 @@ import additionalStars from "../assets/additionalStars.png";
 import Rocketman from "../assets/rocketman.png";
 import { Link } from "react-router-dom";
 
+//
+
 const Welcome = () => {
   return (
     <div className={styles["welcome__container"]}>

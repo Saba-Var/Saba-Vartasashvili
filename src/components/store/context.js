@@ -9,6 +9,8 @@ const Context = React.createContext({
   setEmail: "",
   phoneNumber: "",
   setPhoneNumber: "",
+  skills: [],
+  setSkills: "",
 });
 
 export const ContextProvider = (props) => {
@@ -16,6 +18,8 @@ export const ContextProvider = (props) => {
   const [lastName, setlastName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+
+  const [skills, setSkills] = useState("");
 
   const data = {
     firstName: firstName,
@@ -26,6 +30,8 @@ export const ContextProvider = (props) => {
     setEmail: setEmail,
     phoneNumber: phoneNumber,
     setPhoneNumber: setPhoneNumber,
+    skills: skills,
+    setSkills: setSkills,
   };
 
   return <Context.Provider value={data}>{props.children}</Context.Provider>;
