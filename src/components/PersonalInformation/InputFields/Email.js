@@ -19,6 +19,7 @@ const Email = (props) => {
         }`}
         placeholder="E Mail"
         value={userData.email}
+        noValidate
       />
       {props.emailError && <Error top={top} text="* invalid email" />}
     </>

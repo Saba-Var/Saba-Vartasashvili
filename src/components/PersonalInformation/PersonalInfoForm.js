@@ -50,6 +50,9 @@ const PersonalInfoForm = () => {
     !userData.email.includes(".") || !userData.email.includes("@")
       ? setEmailError(true)
       : setEmailError(false);
+    userData.email.indexOf("@") > userData.email.indexOf(".")
+      ? setEmailError(true)
+      : setEmailError(false);
 
     //validate Phone Number
     !userData.phoneNumber.includes("+995") || userData.phoneNumber.length !== 13
@@ -69,10 +72,12 @@ const PersonalInfoForm = () => {
     !regExp.test(userData.phoneNumber) &&
     userData.email.includes(".") &&
     userData.email.includes("@") &&
+    userData.email.includes("@") &&
+    userData.email.indexOf("@") < userData.email.indexOf(".") &&
     (fullNumber || userData.phoneNumber.length === 0);
   const route = nextPage ? <NextPageLink path="/" /> : <NextPage />;
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} noValidate>
       <FirstName
         firstNameValidityNumber={firstNameValidityNumber}
         lowAmount={lowAmount}
