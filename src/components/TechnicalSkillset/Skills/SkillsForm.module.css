@@ -1,0 +1,80 @@
+.form {
+  width: fit-content;
+}
+.form select {
+  position: absolute;
+  width: 455px;
+  height: 54px;
+  left: 200px;
+  top: 366px;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  padding-left: 57px;
+  padding-right: 30px;
+  box-shadow: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.form select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.dropdown__arrow {
+  position: absolute;
+  left: 620px;
+  top: 391px;
+}
+.pagination {
+  position: absolute;
+  width: 155px;
+  height: 19px;
+  left: 344px;
+  top: 889px;
+}
+
+.experience {
+  position: absolute;
+  width: 455px;
+  height: 54px;
+  left: 200px;
+  top: 451px;
+  background: #ffffff;
+  border: 1px solid #525557;
+  box-sizing: border-box;
+  padding-left: 57px;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+}
+
+.experience::-webkit-input-placeholder {
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  color: #727272;
+}
+
+.experience::-webkit-outer-spin-button,
+.experience::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.experience[type="number"] {
+  -moz-appearance: textfield;
+}

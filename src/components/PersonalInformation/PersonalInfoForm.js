@@ -75,7 +75,11 @@ const PersonalInfoForm = () => {
     userData.email.includes("@") &&
     userData.email.indexOf("@") < userData.email.indexOf(".") &&
     (fullNumber || userData.phoneNumber.length === 0);
-  const route = nextPage ? <NextPageLink path="/" /> : <NextPage />;
+  const route = nextPage ? (
+    <NextPageLink path="/Technical-Skillset" />
+  ) : (
+    <NextPage />
+  );
   return (
     <form onSubmit={submitHandler} noValidate>
       <FirstName

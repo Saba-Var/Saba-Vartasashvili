@@ -15,7 +15,7 @@ const Welcome = () => {
       />
       <img src={Rocketman} alt="astrounaut" className={styles.rocketman} />
       <h2 className={styles["welcome__text"]}>Welcome Rocketeer !</h2>
-      <Link to="Personal-Information">
+      <Link to="/Personal-Information">
         <button className={styles["button__start"]}>Start Questionnaire</button>
       </Link>
       <button className={styles["button__submitted"]}>

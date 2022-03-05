@@ -1,0 +1,21 @@
+.skills__container {
+  width: 913px;
+  height: 1080px;
+}
+.header__text {
+  position: absolute;
+  width: 788px;
+  height: 175px;
+  left: 85px;
+  top: 72px;
+
+  font-family: Rowdies;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 79px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #fe3b1f;
+}
