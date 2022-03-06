@@ -105,3 +105,12 @@
   left: 300px;
   top: 888px;
 }
+
+.pagination__next {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 554px;
+  top: 900px;
+  cursor: pointer;
+}

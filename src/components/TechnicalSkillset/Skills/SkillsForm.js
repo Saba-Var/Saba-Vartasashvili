@@ -5,8 +5,8 @@ import ballsSkills from "../../assets/balls-Skills.svg";
 import AddButton from "./AddButton";
 import SkillSet from "./Skillset";
 import Context from "../../store/context";
+import Next from "../../assets/Next.svg";
 import NextPageLink from "../../buttons/NextPageLink";
-import NextPage from "../../buttons/NextPage";
 import PreviousButton from "../../assets/Previous.svg";
 import { Link } from "react-router-dom";
 
@@ -20,8 +20,8 @@ const SkillsForm = (props) => {
   const [error, setError] = useState(false);
   const [inputError, setInputError] = useState(false);
   const [skillError, setSkillError] = useState(false);
+  const [empty, setEmpty] = useState(false);
   let arr = [];
-
   for (const key in skillsList) {
     arr.push(skillsList[key].title);
   }
@@ -78,16 +78,27 @@ const SkillsForm = (props) => {
     } else {
       setError(true);
     }
+
     years ? setInputError(false) : setInputError(true);
     selectedSkill ? setSkillError(false) : setSkillError(true);
+    console.log(allSkillsArray);
+    if (allSkillsArray.length > 0) setEmpty(false);
   };
-
+  const clickHandler = () => {
+    allSkillsArray.length === 0 ? setEmpty(true) : setEmpty(false);
+    console.log(allSkillsArray);
+  };
   return (
     <div>
       {error && (
         <p
           className={styles.errorMessage}
         >{`* input field is empty or skill selected twice`}</p>
+      )}
+      {empty && (
+        <p
+          className={styles.errorMessage}
+        >{`* select at least 1 skill to go on the next page`}</p>
       )}
       <img
         src={DropdownArrow}
@@ -97,7 +108,8 @@ const SkillsForm = (props) => {
       <form className={styles.form} onSubmit={submitHandler}>
         <select
           onChange={selectHandler}
-          className={`${skillError && styles["red__border"]}`}
+          className={`${skillError && styles["red__border"]}
+          }`}
         >
           <option selected defaultValue disabled hidden>
             Skills
@@ -114,7 +126,7 @@ const SkillsForm = (props) => {
             onChange={inputHandler}
             className={`${styles.experience} ${
               inputError && styles["red__border"]
-            }`}
+            } `}
             type="number"
             placeholder="Experience Duration in Years"
             min={1}
@@ -134,10 +146,19 @@ const SkillsForm = (props) => {
         src={ballsSkills}
         alt="pagination balls"
       />
-      {allSkillsArray.length > 1 && (
+      {allSkillsArray.length > 0 && (
         <NextPageLink path="/" top={"888px"} left={"521px"} />
       )}
-      {allSkillsArray.length < 2 && <NextPage top={"888px"} left={"521px"} />}
+      {allSkillsArray.length === 0 && (
+        <button onClick={clickHandler}>
+          <img
+            src={Next}
+            alt="pagination ball"
+            className={styles["pagination__next"]}
+            style={{ top: "888px", left: "521px" }}
+          />
+        </button>
+      )}
       <Link to="/Personal-Information">
         <img
           className={styles.btnPrev}
