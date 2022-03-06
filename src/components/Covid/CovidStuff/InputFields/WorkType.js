@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import styles from "./WorkType.module.css";
 import Context from "../../../store/context";
 
@@ -8,6 +8,20 @@ const WorkType = (props) => {
     userData.setWorkPreference(e.target.value);
     props.workTypeError && props.setWorkTypeError(false);
   };
+
+  useEffect(() => {
+    if (userData.workPreference !== "") {
+      if (userData.workPreference === "From Sairme Office")
+        document.getElementById("From Sairme Office").checked = true;
+
+      if (userData.workPreference === "From Home")
+        document.getElementById("From Home").checked = true;
+
+      if (userData.workPreference === "Hybrid")
+        document.getElementById("Hybrid").checked = true;
+    }
+  }, []);
+
   return (
     <>
       <p className={styles["work__type__office"]}>
@@ -21,6 +35,7 @@ const WorkType = (props) => {
         className={styles.radio1}
         type="radio"
         name="work"
+        id="From Sairme Office"
         value="From Sairme Office"
       />
       <input
@@ -28,6 +43,7 @@ const WorkType = (props) => {
         className={styles.radio2}
         type="radio"
         name="work"
+        id="From Home"
         value="From Home"
       />
       <input
@@ -36,6 +52,7 @@ const WorkType = (props) => {
         type="radio"
         name="work"
         value="Hybrid"
+        id="Hybrid"
       />
     </>
   );
