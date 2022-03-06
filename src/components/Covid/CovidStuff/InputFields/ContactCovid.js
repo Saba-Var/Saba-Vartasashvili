@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Context from "../../../store/context";
 import styles from "./ContactCovid.module.css";
 const ContactCovid = (props) => {
@@ -8,13 +8,25 @@ const ContactCovid = (props) => {
       ? userData.setHadCovid(true)
       : userData.setHadCovid(false);
     props.setCovidActions(1);
+    userData.setContactAction(1);
     props.setContactError(false);
     e.target.value === "No" && props.setContactError(false);
     userData.hadCovid !== "" &&
       e.target.value === "No" &&
       userData.setHadCovidAt("");
     e.target.value === "No" && props.setWhenError(false);
+    console.log(userData.contactAction);
   };
+
+  useEffect(() => {
+    if (userData.contactAction === 1) {
+      if (userData.hadCovid === true)
+        document.getElementById("Yes").checked = true;
+
+      if (userData.hadCovid === false)
+        document.getElementById("No").checked = true;
+    }
+  }, []);
 
   return (
     <>
@@ -27,6 +39,7 @@ const ContactCovid = (props) => {
         type="radio"
         name="contact"
         value="Yes"
+        id="Yes"
       />
       <input
         onChange={inputHandler}
@@ -34,6 +47,7 @@ const ContactCovid = (props) => {
         type="radio"
         name="contact"
         value="No"
+        id="No"
       />
     </>
   );

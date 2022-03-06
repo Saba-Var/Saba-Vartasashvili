@@ -17,6 +17,7 @@ const When = (props) => {
     userData.setHadCovidAt(e.target.value);
     props.setWhenError(false);
   };
+
   return (
     <>
       {userData.hadCovid && (
@@ -30,6 +31,7 @@ const When = (props) => {
             onChange={dateHandler}
             max={today}
             min="2019-01-01"
+            value={userData.hadCovidAt}
           />
           <img src={Calendar} alt="calendar icon" className={styles.calendar} />
         </>

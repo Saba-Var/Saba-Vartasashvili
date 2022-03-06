@@ -67,6 +67,7 @@ const CovidStuff = () => {
         />
         {workTypeError && <CovidError top="475px" text="* required field" />}
         <ContactCovid
+          covidActions={covidActions}
           contactError={contactError}
           setCovidActions={setCovidActions}
           setContactError={setContactError}
