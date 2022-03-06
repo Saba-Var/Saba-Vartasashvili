@@ -18,6 +18,8 @@ const CovidStuff = () => {
   const [workTypeError, setWorkTypeError] = useState(false);
   const [covidActions, setCovidActions] = useState(0);
   const [contactError, setContactError] = useState(false);
+  const [whenError, setWhenError] = useState(false);
+
   const submitHandler = (e) => {
     e.preventDefault();
     userData.workPreference === ""
@@ -25,6 +27,9 @@ const CovidStuff = () => {
       : setWorkTypeError(false);
 
     covidActions === 0 ? setContactError(true) : setContactError(false);
+    userData.hadCovid === true && userData.hadCovidAt === ""
+      ? setWhenError(true)
+      : setWhenError(false);
   };
 
   return (
@@ -40,7 +45,8 @@ const CovidStuff = () => {
           setContactError={setContactError}
         />
         {contactError && <CovidError top="640px" text="* required field" />}
-        <When />
+        <When setWhenError={setWhenError} />
+        {whenError && <CovidError top="802px" text="* required field" />}
         <Vaccinated />
         <LastVaccine />
         <NextPage top="1292px" left="507px" />

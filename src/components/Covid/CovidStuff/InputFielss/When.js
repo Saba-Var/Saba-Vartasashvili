@@ -3,7 +3,7 @@ import Calendar from "../../../assets/calendar.svg";
 import { useContext } from "react";
 import Context from "../../../store/context";
 
-const When = () => {
+const When = (props) => {
   const userData = useContext(Context);
   let today = new Date();
   let dd = today.getDate();
@@ -12,8 +12,10 @@ const When = () => {
   if (dd < 10) dd = "0" + dd;
   if (mm < 10) mm = "0" + mm;
   today = yyyy + "-" + mm + "-" + dd;
+
   const dateHandler = (e) => {
-    console.log(e.target.value);
+    userData.setHadCovidAt(e.target.value);
+    props.setWhenError(false);
   };
   return (
     <>
