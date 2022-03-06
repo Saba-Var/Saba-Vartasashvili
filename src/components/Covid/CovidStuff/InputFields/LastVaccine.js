@@ -16,6 +16,7 @@ const LastVaccine = (props) => {
     userData.setVaccinatedAt(e.target.value);
     props.setWhenLastVaccineError(false);
   };
+  console.log(userData);
   return (
     <>
       {userData.vaccinated && (
@@ -30,6 +31,7 @@ const LastVaccine = (props) => {
             className={styles.date2}
             max={today}
             min="2019-01-01"
+            value={userData.vaccinatedAt}
           />
           <img
             src={Calendar}

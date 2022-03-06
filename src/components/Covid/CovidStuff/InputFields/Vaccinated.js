@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Context from "../../../store/context";
 import styles from "./Vaccinated.module.css";
 const Vaccinated = (props) => {
@@ -11,7 +11,17 @@ const Vaccinated = (props) => {
     userData.vaccinated === false && userData.setVaccinatedAt("");
     props.setShowError(false);
     props.setVaccinatedError(1);
+    userData.setVaccineAction(1);
   };
+
+  useEffect(() => {
+    if (userData.vaccineAction === 1) {
+      if (userData.vaccinated === true)
+        document.getElementById("Yes2").checked = true;
+      if (userData.vaccinated === false)
+        document.getElementById("No2").checked = true;
+    }
+  }, []);
   return (
     <>
       <p className={styles.header}>Have you been vaccinated?</p>
@@ -23,6 +33,7 @@ const Vaccinated = (props) => {
         type="radio"
         name="vaccinated"
         value="Yes"
+        id="Yes2"
       />
       <input
         onChange={inputHandler}
@@ -30,6 +41,7 @@ const Vaccinated = (props) => {
         type="radio"
         name="vaccinated"
         value="No"
+        id="No2"
       />
     </>
   );

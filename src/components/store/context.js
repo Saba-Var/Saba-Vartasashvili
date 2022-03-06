@@ -37,10 +37,13 @@ export const ContextProvider = (props) => {
 
   //to save radio inputs during routing
   const [contactAction, setContactAction] = useState(0);
+  const [vaccineAction, setVaccineAction] = useState(0);
 
   const data = {
     contactAction: contactAction,
     setContactAction: setContactAction,
+    vaccineAction: vaccineAction,
+    setVaccineAction: setVaccineAction,
     firstName: firstName,
     setFirstName: setFirstName,
     lastName: lastName,
