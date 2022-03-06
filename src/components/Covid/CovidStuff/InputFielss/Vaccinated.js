@@ -9,6 +9,8 @@ const Vaccinated = (props) => {
       : userData.setVaccinated(false);
     userData.vaccinated === true && props.setWhenLastVaccineError(false);
     userData.vaccinated === false && userData.setVaccinatedAt("");
+    props.setShowError(false);
+    props.setVaccinatedError(1);
   };
   return (
     <>

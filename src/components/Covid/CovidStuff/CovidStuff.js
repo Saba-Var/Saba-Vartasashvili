@@ -20,7 +20,8 @@ const CovidStuff = () => {
   const [contactError, setContactError] = useState(false);
   const [whenError, setWhenError] = useState(false);
   const [whenLastVaccineError, setWhenLastVaccineError] = useState(false);
-  const [vaccinatedError, setVaccinaedError] = useState(false);
+  const [vaccinatedError, setVaccinatedError] = useState(0);
+  const [showError, setShowError] = useState(false);
   const submitHandler = (e) => {
     //validate WorkType
     e.preventDefault();
@@ -34,21 +35,19 @@ const CovidStuff = () => {
     userData.hadCovid === false &&
       userData.hadCovidAt !== "" &&
       userData.setHadCovidAt("");
+
     //validate When component/date input
     userData.hadCovid === false && userData.setHadCovidAt("");
     userData.hadCovid === true && userData.hadCovidAt === ""
       ? setWhenError(true)
       : setWhenError(false);
-    console.log(userData.hadCovid);
 
     //validate Vaccinated
     userData.vaccinated === false && userData.setVaccinatedAt("");
     userData.vaccinated === false &&
       userData.vaccinated !== "" &&
       userData.setVaccinatedAt("");
-    userData.vaccinated === ""
-      ? setVaccinaedError(true)
-      : setVaccinaedError(false);
+    vaccinatedError === 0 && setShowError(true);
 
     //validate LastVaccine/date input
     userData.vaccinated === "" && userData.setVaccinated(false);
@@ -69,15 +68,20 @@ const CovidStuff = () => {
         />
         {workTypeError && <CovidError top="475px" text="* required field" />}
         <ContactCovid
+          contactError={contactError}
           setCovidActions={setCovidActions}
           setContactError={setContactError}
         />
         {contactError && <CovidError top="640px" text="* required field" />}
         <When setWhenError={setWhenError} />
         {whenError && <CovidError top="802px" text="* required field" />}
-        <Vaccinated setWhenLastVaccineError={setWhenLastVaccineError} />
+        <Vaccinated
+          setWhenLastVaccineError={setWhenLastVaccineError}
+          setShowError={setShowError}
+          setVaccinatedError={setVaccinatedError}
+        />
 
-        {vaccinatedError && <CovidError top="995px" text="* required field" />}
+        {showError && <CovidError top="995px" text="* required field" />}
 
         <LastVaccine setWhenLastVaccineError={setWhenLastVaccineError} />
         {whenLastVaccineError && (

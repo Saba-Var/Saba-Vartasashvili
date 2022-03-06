@@ -10,6 +10,12 @@ const ContactCovid = (props) => {
     props.setCovidActions(1);
     props.setContactError(false);
     e.target.value === "No" && props.setContactError(false);
+    userData.hadCovid !== "" &&
+      e.target.value === "No" &&
+      userData.setHadCovidAt("");
+  };
+  const focus = (e) => {
+    console.log(e.target.value);
   };
   return (
     <>
