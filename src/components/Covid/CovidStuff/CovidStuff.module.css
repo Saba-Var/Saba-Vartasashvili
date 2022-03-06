@@ -1,0 +1,14 @@
+.pagination__balls {
+  position: absolute;
+  width: 155px;
+  height: 19px;
+  left: 330px;
+  top: 1292px;
+}
+.pagination__previous {
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  left: 290px;
+  top: 1290px;
+}

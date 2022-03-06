@@ -81,12 +81,10 @@ const SkillsForm = (props) => {
 
     years ? setInputError(false) : setInputError(true);
     selectedSkill ? setSkillError(false) : setSkillError(true);
-    console.log(allSkillsArray);
     if (allSkillsArray.length > 0) setEmpty(false);
   };
   const clickHandler = () => {
     allSkillsArray.length === 0 ? setEmpty(true) : setEmpty(false);
-    console.log(allSkillsArray);
   };
   return (
     <div>
@@ -147,7 +145,7 @@ const SkillsForm = (props) => {
         alt="pagination balls"
       />
       {allSkillsArray.length > 0 && (
-        <NextPageLink path="/" top={"888px"} left={"521px"} />
+        <NextPageLink path="/Covid" top={"888px"} left={"521px"} />
       )}
       {allSkillsArray.length === 0 && (
         <button onClick={clickHandler}>

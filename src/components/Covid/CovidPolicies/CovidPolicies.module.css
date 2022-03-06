@@ -1,0 +1,43 @@
+.background {
+  position: absolute;
+  width: 1007px;
+  height: 1380px;
+  left: 913px;
+  top: 0px;
+  background: radial-gradient(50% 50% at 50% 50%, #0c0d0e 0%, #151718 73.44%);
+  z-index: 2;
+}
+.header {
+  z-index: 99;
+  position: absolute;
+  width: 788px;
+  height: 175px;
+  left: 1066px;
+  top: 61px;
+  font-family: Rowdies;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 79px;
+  display: flex;
+  align-items: center;
+  color: #fe3b1f;
+}
+
+.text {
+  position: absolute;
+  width: 705px;
+  height: 606px;
+  left: 1074px;
+  top: 251px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 200%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  z-index: 99;
+}
