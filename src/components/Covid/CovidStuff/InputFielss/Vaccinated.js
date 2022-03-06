@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import Context from "../../../store/context";
 import styles from "./Vaccinated.module.css";
-const Vaccinated = () => {
+const Vaccinated = (props) => {
   const userData = useContext(Context);
   const inputHandler = (e) => {
     e.target.value === "Yes"
       ? userData.setVaccinated(true)
       : userData.setVaccinated(false);
+    userData.vaccinated === true && props.setWhenLastVaccineError(false);
   };
   return (
     <>

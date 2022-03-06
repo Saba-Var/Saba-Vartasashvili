@@ -19,17 +19,29 @@ const CovidStuff = () => {
   const [covidActions, setCovidActions] = useState(0);
   const [contactError, setContactError] = useState(false);
   const [whenError, setWhenError] = useState(false);
+  const [whenLastVaccineError, setWhenLastVaccineError] = useState(false);
 
   const submitHandler = (e) => {
+    //validate WorkType
     e.preventDefault();
     userData.workPreference === ""
       ? setWorkTypeError(true)
       : setWorkTypeError(false);
 
+    //validate ContactCovid
     covidActions === 0 ? setContactError(true) : setContactError(false);
+
+    //validate When component/date input
     userData.hadCovid === true && userData.hadCovidAt === ""
       ? setWhenError(true)
       : setWhenError(false);
+
+    //validate LastVaccine/date input
+    userData.vaccinated === "" && userData.setVaccinated(false);
+    userData.vaccinated === false && userData.setVaccinatedAt("");
+    userData.vaccinated === true && userData.vaccinatedAt === ""
+      ? setWhenLastVaccineError(true)
+      : setWhenLastVaccineError(false);
   };
 
   return (
@@ -47,8 +59,12 @@ const CovidStuff = () => {
         {contactError && <CovidError top="640px" text="* required field" />}
         <When setWhenError={setWhenError} />
         {whenError && <CovidError top="802px" text="* required field" />}
-        <Vaccinated />
-        <LastVaccine />
+        <Vaccinated setWhenLastVaccineError={setWhenLastVaccineError} />
+
+        <LastVaccine setWhenLastVaccineError={setWhenLastVaccineError} />
+        {whenLastVaccineError && (
+          <CovidError top="1162px" text="* required field" />
+        )}
         <NextPage top="1292px" left="507px" />
       </form>
       <img

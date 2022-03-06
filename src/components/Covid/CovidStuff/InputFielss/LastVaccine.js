@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Context from "../../../store/context";
 import styles from "./LastVaccine.module.css";
 import Calendar from "../../../assets/calendar.svg";
-const LastVaccine = () => {
+const LastVaccine = (props) => {
   const userData = useContext(Context);
   let today = new Date();
   let dd = today.getDate();
@@ -12,6 +12,10 @@ const LastVaccine = () => {
   if (mm < 10) mm = "0" + mm;
   today = yyyy + "-" + mm + "-" + dd;
 
+  const lastVaccineHandler = (e) => {
+    userData.setVaccinatedAt(e.target.value);
+    props.setWhenLastVaccineError(false);
+  };
   return (
     <>
       {userData.vaccinated && (
@@ -20,6 +24,7 @@ const LastVaccine = () => {
             When did you get your last covid vaccine?
           </p>
           <input
+            onChange={lastVaccineHandler}
             type="date"
             placeholder="Date"
             className={styles.date2}
