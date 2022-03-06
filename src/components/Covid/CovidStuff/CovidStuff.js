@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import WorkType from "./InputFielss/WorkType";
-import ContactCovid from "./InputFielss/ContactCovid";
-import When from "./InputFielss/When";
-import Vaccinated from "./InputFielss/Vaccinated";
-import LastVaccine from "./InputFielss/LastVaccine";
+import WorkType from "./InputFields/WorkType";
+import ContactCovid from "./InputFields/ContactCovid";
+import When from "./InputFields/When";
+import Vaccinated from "./InputFields/Vaccinated";
+import LastVaccine from "./InputFields/LastVaccine";
 import NextPage from "../../buttons/NextPage";
 import Balls from "../../assets/balls (2).svg";
 import styles from "./CovidStuff.module.css";
@@ -30,7 +30,6 @@ const CovidStuff = () => {
       : setWorkTypeError(false);
 
     //validate ContactCovid
-
     covidActions === 0 ? setContactError(true) : setContactError(false);
     userData.hadCovid === false &&
       userData.hadCovidAt !== "" &&
@@ -71,6 +70,7 @@ const CovidStuff = () => {
           contactError={contactError}
           setCovidActions={setCovidActions}
           setContactError={setContactError}
+          setWhenError={setWhenError}
         />
         {contactError && <CovidError top="640px" text="* required field" />}
         <When setWhenError={setWhenError} />

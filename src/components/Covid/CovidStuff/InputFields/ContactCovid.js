@@ -13,10 +13,9 @@ const ContactCovid = (props) => {
     userData.hadCovid !== "" &&
       e.target.value === "No" &&
       userData.setHadCovidAt("");
+    e.target.value === "No" && props.setWhenError(false);
   };
-  const focus = (e) => {
-    console.log(e.target.value);
-  };
+
   return (
     <>
       <p className={styles.header}>Did you contact covid 19? :{"("}</p>
