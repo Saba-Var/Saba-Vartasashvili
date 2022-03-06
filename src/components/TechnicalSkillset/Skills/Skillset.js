@@ -17,7 +17,6 @@ const SkillSet = (props) => {
       return prevState.filter((item) => String(item.id) !== e.target.id);
     });
   };
-
   return (
     <>
       {userData.skills.length > 0 && (

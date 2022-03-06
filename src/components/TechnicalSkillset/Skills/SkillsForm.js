@@ -84,7 +84,7 @@ const SkillsForm = (props) => {
     if (allSkillsArray.length > 0) setEmpty(false);
   };
   const clickHandler = () => {
-    allSkillsArray.length === 0 ? setEmpty(true) : setEmpty(false);
+    userData.skills.length === 0 ? setEmpty(true) : setEmpty(false);
   };
   return (
     <div>
@@ -144,10 +144,10 @@ const SkillsForm = (props) => {
         src={ballsSkills}
         alt="pagination balls"
       />
-      {allSkillsArray.length > 0 && (
+      {userData.skills.length > 0 && (
         <NextPageLink path="/Covid" top={"888px"} left={"521px"} />
       )}
-      {allSkillsArray.length === 0 && (
+      {userData.skills.length === 0 && (
         <button onClick={clickHandler}>
           <img
             src={Next}
