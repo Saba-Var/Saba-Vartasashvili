@@ -9,6 +9,7 @@ const ContactCovid = (props) => {
       : userData.setHadCovid(false);
     props.setCovidActions(1);
     props.setContactError(false);
+    e.target.value === "No" && props.setContactError(false);
   };
   return (
     <>
