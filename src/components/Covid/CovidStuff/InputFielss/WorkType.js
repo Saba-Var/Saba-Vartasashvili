@@ -2,10 +2,11 @@ import { useContext } from "react";
 import styles from "./WorkType.module.css";
 import Context from "../../../store/context";
 
-const WorkType = () => {
+const WorkType = (props) => {
   const userData = useContext(Context);
   const inputHandler = (e) => {
     userData.setWorkPreference(e.target.value);
+    props.workTypeError && props.setWorkTypeError(false);
   };
   return (
     <>

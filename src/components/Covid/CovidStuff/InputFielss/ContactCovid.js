@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import Context from "../../../store/context";
 import styles from "./ContactCovid.module.css";
-const ContactCovid = () => {
+const ContactCovid = (props) => {
   const userData = useContext(Context);
   const inputHandler = (e) => {
     e.target.value === "Yes"
       ? userData.setHadCovid(true)
       : userData.setHadCovid(false);
+    props.setCovidActions(1);
+    props.setContactError(false);
   };
   return (
     <>
