@@ -4,7 +4,9 @@ import styles from "./Vaccinated.module.css";
 const Vaccinated = () => {
   const userData = useContext(Context);
   const inputHandler = (e) => {
-    userData.setVaccinated(e.target.value);
+    e.target.value === "Yes"
+      ? userData.setVaccinated(true)
+      : userData.setVaccinated(false);
   };
   return (
     <>

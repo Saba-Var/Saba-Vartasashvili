@@ -4,7 +4,9 @@ import styles from "./ContactCovid.module.css";
 const ContactCovid = () => {
   const userData = useContext(Context);
   const inputHandler = (e) => {
-    userData.setHadCovid(e.target.value);
+    e.target.value === "Yes"
+      ? userData.setHadCovid(true)
+      : userData.setHadCovid(false);
   };
   return (
     <>

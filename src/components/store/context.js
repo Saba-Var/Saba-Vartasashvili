@@ -30,9 +30,9 @@ export const ContextProvider = (props) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [skills, setSkills] = useState("");
   const [workPreference, setWorkPreference] = useState("");
-  const [hadCovid, setHadCovid] = useState("");
+  const [hadCovid, setHadCovid] = useState(false);
   const [hadCovidAt, setHadCovidAt] = useState("");
-  const [vaccinated, setVaccinated] = useState("");
+  const [vaccinated, setVaccinated] = useState(false);
   const [vaccinatedAt, setVaccinatedAt] = useState("");
 
   const data = {
