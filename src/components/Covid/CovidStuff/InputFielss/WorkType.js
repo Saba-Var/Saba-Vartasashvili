@@ -1,5 +1,12 @@
+import { useContext } from "react";
 import styles from "./WorkType.module.css";
+import Context from "../../../store/context";
+
 const WorkType = () => {
+  const userData = useContext(Context);
+  const inputHandler = (e) => {
+    userData.setWorkPreference(e.target.value);
+  };
   return (
     <>
       <p className={styles["work__type__office"]}>
@@ -9,18 +16,21 @@ const WorkType = () => {
       <label className={styles.home}>From Home</label>
       <label className={styles.hybrid}>Hybrid</label>
       <input
+        onChange={inputHandler}
         className={styles.radio1}
         type="radio"
         name="work"
         value="From Sairme Office"
       />
       <input
+        onChange={inputHandler}
         className={styles.radio2}
         type="radio"
         name="work"
         value="From Home"
       />
       <input
+        onChange={inputHandler}
         className={styles.radio3}
         type="radio"
         name="work"

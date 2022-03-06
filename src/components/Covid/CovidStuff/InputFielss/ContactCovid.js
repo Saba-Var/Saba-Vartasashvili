@@ -1,21 +1,29 @@
+import { useContext } from "react";
+import Context from "../../../store/context";
 import styles from "./ContactCovid.module.css";
 const ContactCovid = () => {
+  const userData = useContext(Context);
+  const inputHandler = (e) => {
+    userData.setHadCovid(e.target.value);
+  };
   return (
     <>
       <p className={styles.header}>Did you contact covid 19? :{"("}</p>
       <label className={styles.yes}>Yes</label>
       <label className={styles.no}>No</label>
       <input
+        onChange={inputHandler}
         className={styles.radio1}
         type="radio"
         name="contact"
-        value="From Sairme Office"
+        value="Yes"
       />
       <input
+        onChange={inputHandler}
         className={styles.radio2}
         type="radio"
         name="contact"
-        value="From Home"
+        value="No"
       />
     </>
   );

@@ -8,6 +8,7 @@ import NextPage from "../../buttons/NextPage";
 import Balls from "../../assets/balls (2).svg";
 import styles from "./CovidStuff.module.css";
 import Previous from "../../assets/Previous.svg";
+
 const CovidStuff = () => {
   return (
     <>
