@@ -1,5 +1,5 @@
 import Context from "../../../store/context";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import styles from "./DevtalksRadio.module.css";
 import Error from "../../../PersonalInformation/Error/Error";
 

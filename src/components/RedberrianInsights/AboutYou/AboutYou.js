@@ -13,6 +13,7 @@ const AboutYou = () => {
   const userDate = useContext(Context);
   const [devTalkAreaError, setDevTalkAreaError] = useState(false);
   const [radioError, setRadioError] = useState(false);
+  const [specialAreaError, setSpecialError] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -27,6 +28,11 @@ const AboutYou = () => {
 
     //remove error when user selects No
     userDate.devRadio === false && setDevTalkAreaError(false);
+
+    //if textarea of Soecial.js is empty show error
+    userDate.specialDevTalk.trim() === ""
+      ? setSpecialError(true)
+      : setSpecialError(false);
   };
   return (
     <>
@@ -41,7 +47,10 @@ const AboutYou = () => {
           devTalkAreaError={devTalkAreaError}
           setDevTalkAreaError={setDevTalkAreaError}
         />
-        <Special />
+        <Special
+          specialAreaError={specialAreaError}
+          setSpecialError={setSpecialError}
+        />
         <Link to="/Covid">
           <button>
             <img
