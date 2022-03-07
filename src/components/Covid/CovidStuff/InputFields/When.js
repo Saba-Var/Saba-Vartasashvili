@@ -27,7 +27,9 @@ const When = (props) => {
             id="datefield"
             type="date"
             placeholder="Date"
-            className={styles.date}
+            className={`${styles.date} ${
+              props.whenError && styles["red__border"]
+            }`}
             onChange={dateHandler}
             max={today}
             min="2019-01-01"

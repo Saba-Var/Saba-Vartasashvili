@@ -28,7 +28,9 @@ const LastVaccine = (props) => {
             onChange={lastVaccineHandler}
             type="date"
             placeholder="Date"
-            className={styles.date2}
+            className={`${styles.date2}  ${
+              props.whenLastVaccineError && styles["red__border"]
+            }`}
             max={today}
             min="2019-01-01"
             value={userData.vaccinatedAt}

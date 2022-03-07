@@ -80,7 +80,7 @@ const CovidStuff = () => {
         {contactError && userData.contactAction === 0 && (
           <CovidError top="640px" text="* required field" />
         )}
-        <When setWhenError={setWhenError} />
+        <When setWhenError={setWhenError} whenError={whenError} />
         {whenError && <CovidError top="802px" text="* required field" />}
         <Vaccinated
           setWhenLastVaccineError={setWhenLastVaccineError}
@@ -91,7 +91,10 @@ const CovidStuff = () => {
           <CovidError top="995px" text="* required field" />
         )}
 
-        <LastVaccine setWhenLastVaccineError={setWhenLastVaccineError} />
+        <LastVaccine
+          setWhenLastVaccineError={setWhenLastVaccineError}
+          whenLastVaccineError={whenLastVaccineError}
+        />
         {whenLastVaccineError && (
           <CovidError top="1162px" text="* required field" />
         )}
