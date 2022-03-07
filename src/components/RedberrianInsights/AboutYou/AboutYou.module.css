@@ -4,7 +4,6 @@
   height: 175px;
   left: 140px;
   top: 43px;
-
   font-family: Rowdies;
   font-style: normal;
   font-weight: normal;
@@ -12,8 +11,21 @@
   line-height: 79px;
   display: flex;
   align-items: center;
-
-  /* Redberry Red */
-
   color: #fe3b1f;
+}
+
+.pagination__previous {
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  left: 302px;
+  top: 962px;
+}
+
+.pagination__balls {
+  position: absolute;
+  width: 155px;
+  height: 19px;
+  left: 341px;
+  top: 964px;
 }
