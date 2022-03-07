@@ -1,19 +1,11 @@
-.main__container {
-  display: flex;
-}
-.container1 {
-  width: 50%;
-  height: 1080px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .container2 {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
+  position: absolute;
+  width: 1007px;
   height: 1080px;
+  left: 913px;
+  top: 0px;
   background: radial-gradient(50% 50% at 50% 50%, #0c0d0e 0%, #151718 73.44%);
+  z-index: -5;
 }
 .user__coordinates {
   position: absolute;
@@ -21,7 +13,6 @@
   height: 128px;
   left: 105px;
   top: 131px;
-
   font-family: Rowdies;
   font-style: normal;
   font-weight: normal;
@@ -30,9 +21,6 @@
   display: flex;
   align-items: center;
   text-align: center;
-
-  /* Redberry Red */
-
   color: #fe3b1f;
 }
 
@@ -49,9 +37,6 @@
   line-height: 79px;
   display: flex;
   align-items: center;
-
-  /* Redberry Red */
-
   color: #fe3b1f;
 }
 
