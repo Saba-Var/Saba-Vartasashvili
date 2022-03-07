@@ -16,7 +16,7 @@ const SkillsForm = (props) => {
   const [selectedSkill, setSelectedSkill] = useState("");
   const [years, setYears] = useState("");
   const [items, setItems] = useState([]);
-  const [allSkillsArray, setAllSkillsArray] = useState([]);
+  // allSkillsArray, setAllSkillsArray
   const [error, setError] = useState(false);
   const [inputError, setInputError] = useState(false);
   const [skillError, setSkillError] = useState(false);
@@ -53,15 +53,15 @@ const SkillsForm = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (
-      !allSkillsArray.includes(selectedSkill) &&
+      !userData.allSkillsArray.includes(selectedSkill) &&
       years !== "" &&
       selectedSkill !== ""
     ) {
       setError(false);
-      setAllSkillsArray((prevState) => {
+      userData.setAllSkillsArray((prevState) => {
         return [...prevState, selectedSkill];
       });
-      allSkillsArray.push(selectedSkill);
+      userData.allSkillsArray.push(selectedSkill);
       setItems((prevState) => {
         return [...prevState, [selectedSkill, years]];
       });
@@ -81,7 +81,7 @@ const SkillsForm = (props) => {
 
     years ? setInputError(false) : setInputError(true);
     selectedSkill ? setSkillError(false) : setSkillError(true);
-    if (allSkillsArray.length > 0) setEmpty(false);
+    if (userData.allSkillsArray.length > 0) setEmpty(false);
   };
   const clickHandler = () => {
     userData.skills.length === 0 ? setEmpty(true) : setEmpty(false);
@@ -133,12 +133,7 @@ const SkillsForm = (props) => {
         </div>
         <AddButton items={items} />
       </form>
-      <SkillSet
-        items={items}
-        setItems={setItems}
-        allSkillsArray={allSkillsArray}
-        setAllSkillsArray={setAllSkillsArray}
-      />
+      <SkillSet items={items} setItems={setItems} />
       <img
         className={styles.pagination}
         src={ballsSkills}

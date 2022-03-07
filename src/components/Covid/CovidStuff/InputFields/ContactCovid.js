@@ -15,7 +15,6 @@ const ContactCovid = (props) => {
       e.target.value === "No" &&
       userData.setHadCovidAt("");
     e.target.value === "No" && props.setWhenError(false);
-    console.log(userData.contactAction);
   };
 
   useEffect(() => {

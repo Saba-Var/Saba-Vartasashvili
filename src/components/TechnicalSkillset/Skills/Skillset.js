@@ -9,7 +9,7 @@ const SkillSet = (props) => {
     props.setItems((prevState) =>
       prevState.filter((item) => item[0] !== e.target.id)
     );
-    props.setAllSkillsArray((prevState) =>
+    userData.setAllSkillsArray((prevState) =>
       prevState.filter((item) => item !== e.target.name)
     );
 

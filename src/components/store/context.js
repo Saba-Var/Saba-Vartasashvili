@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 const Context = React.createContext({
+  allSkillsArray: "",
+  setAllSkillsArray: "",
   firstName: "",
   setFirstName: "",
   lastName: "",
@@ -24,6 +26,7 @@ const Context = React.createContext({
 });
 
 export const ContextProvider = (props) => {
+  const [allSkillsArray, setAllSkillsArray] = useState([]);
   const [firstName, setFirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [email, setEmail] = useState("");
@@ -34,12 +37,12 @@ export const ContextProvider = (props) => {
   const [hadCovidAt, setHadCovidAt] = useState("");
   const [vaccinated, setVaccinated] = useState(false);
   const [vaccinatedAt, setVaccinatedAt] = useState("");
-
-  //to save radio inputs during routing
   const [contactAction, setContactAction] = useState(0);
   const [vaccineAction, setVaccineAction] = useState(0);
 
   const data = {
+    allSkillsArray: allSkillsArray,
+    setAllSkillsArray: setAllSkillsArray,
     contactAction: contactAction,
     setContactAction: setContactAction,
     vaccineAction: vaccineAction,

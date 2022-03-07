@@ -16,7 +16,7 @@ const LastVaccine = (props) => {
     userData.setVaccinatedAt(e.target.value);
     props.setWhenLastVaccineError(false);
   };
-  console.log(userData);
+
   return (
     <>
       {userData.vaccinated && (
