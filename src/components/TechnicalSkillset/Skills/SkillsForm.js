@@ -109,9 +109,7 @@ const SkillsForm = (props) => {
           className={`${skillError && styles["red__border"]}
           }`}
         >
-          <option selected defaultValue disabled hidden>
-            Skills
-          </option>
+          <option hidden>Skills</option>
           {skillsList.map((skill) => (
             <option key={skill.id} id={skill.id} value={`${skill.title}`}>
               {skill.title}
