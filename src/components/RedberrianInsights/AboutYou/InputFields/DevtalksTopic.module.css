@@ -1,0 +1,43 @@
+.topic {
+  position: absolute;
+  width: 645px;
+  height: 52px;
+  left: 153px;
+  top: 509px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.textarea {
+  position: absolute;
+  width: 535px;
+  height: 122px;
+  left: 153px;
+  top: 572px;
+  resize: none;
+  background: #ffffff;
+  padding: 31px 23px;
+  border: 1px solid #525557;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.textarea::-webkit-input-placeholder {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  color: #3a3a3a;
+}

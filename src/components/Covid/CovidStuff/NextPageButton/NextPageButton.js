@@ -8,7 +8,9 @@ const NextPageButton = () => {
     userData.vaccinatedError === 1 &&
     userData.workPreference !== "";
 
-  const NextPageRoute = <NextPageLink top="1292px" left="507px" path="/" />;
+  const NextPageRoute = (
+    <NextPageLink top="1292px" left="507px" path="/Redberrian-Insights" />
+  );
   return (
     <>
       {/* had covid and vaccinated/date inputs checked */}

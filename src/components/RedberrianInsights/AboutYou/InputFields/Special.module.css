@@ -1,0 +1,47 @@
+.special__label {
+  position: absolute;
+  width: 645px;
+  height: 52px;
+  left: 153px;
+  top: 727px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.special__textarea {
+  resize: none;
+  position: absolute;
+  width: 535px;
+  height: 89px;
+  left: 153px;
+  top: 790px;
+  background: #ffffff;
+  border: 1px solid #525557;
+  box-sizing: border-box;
+  padding: 31px 23px;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.special__textarea::-webkit-input-placeholder {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #3a3a3a;
+}
