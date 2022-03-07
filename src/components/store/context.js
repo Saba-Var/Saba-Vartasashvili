@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 
 const Context = React.createContext({
+  specialDevTalk: "",
+  setSpecialDevTalks: "",
+  devTextarea: "",
+  setDevTextArea: "",
+  devRadio: "",
+  setDevRadio: "",
+  devtalkRadioAction: "",
+  setDevTalkRadioAction: "",
   vaccinatedError: "",
   setVaccinatedError: "",
   covidActions: "",
@@ -30,6 +38,7 @@ const Context = React.createContext({
 });
 
 export const ContextProvider = (props) => {
+  const [devtalkRadioAction, setDevTalkRadioAction] = useState(0);
   const [vaccinatedError, setVaccinatedError] = useState(0);
   const [covidActions, setCovidActions] = useState(0);
   const [allSkillsArray, setAllSkillsArray] = useState([]);
@@ -45,8 +54,19 @@ export const ContextProvider = (props) => {
   const [vaccinatedAt, setVaccinatedAt] = useState("");
   const [contactAction, setContactAction] = useState(0);
   const [vaccineAction, setVaccineAction] = useState(0);
+  const [devRadio, setDevRadio] = useState("");
+  const [devTextarea, setDevTextArea] = useState("");
+  const [specialDevTalk, setSpecialDevTalks] = useState("");
 
   const data = {
+    specialDevTalk: specialDevTalk,
+    setSpecialDevTalks: setSpecialDevTalks,
+    devTextarea: devTextarea,
+    setDevTextArea: setDevTextArea,
+    devRadio: devRadio,
+    setDevRadio: setDevRadio,
+    devtalkRadioAction: devtalkRadioAction,
+    setDevTalkRadioAction: setDevTalkRadioAction,
     vaccinatedError: vaccinatedError,
     setVaccinatedError: setVaccinatedError,
     covidActions: covidActions,
