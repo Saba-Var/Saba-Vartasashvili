@@ -12,6 +12,7 @@ import NextPage from "../../buttons/NextPage";
 const AboutYou = () => {
   const userDate = useContext(Context);
   const [devTalkAreaError, setDevTalkAreaError] = useState(false);
+  const [radioError, setRadioError] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -21,6 +22,9 @@ const AboutYou = () => {
       userDate.devTextarea.trim() === "" &&
       setDevTalkAreaError(true);
 
+    //if radio input is unchecked show error
+    userDate.devtalkRadioAction === 0 && setRadioError(true);
+
     //remove error when user selects No
     userDate.devRadio === false && setDevTalkAreaError(false);
   };
@@ -28,7 +32,11 @@ const AboutYou = () => {
     <>
       <h2 className={styles["about__header"]}>What about you?</h2>
       <form onSubmit={submitHandler}>
-        <DevtalksRadio setDevTalkAreaError={setDevTalkAreaError} />
+        <DevtalksRadio
+          setDevTalkAreaError={setDevTalkAreaError}
+          radioError={radioError}
+          setRadioError={setRadioError}
+        />
         <DevTalksTopic
           devTalkAreaError={devTalkAreaError}
           setDevTalkAreaError={setDevTalkAreaError}

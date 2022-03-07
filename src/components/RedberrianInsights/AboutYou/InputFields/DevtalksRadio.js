@@ -1,6 +1,8 @@
 import Context from "../../../store/context";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "./DevtalksRadio.module.css";
+import Error from "../../../PersonalInformation/Error/Error";
+
 const DevtalksRadio = (props) => {
   const userData = useContext(Context);
   const radioHandler = (e) => {
@@ -14,6 +16,9 @@ const DevtalksRadio = (props) => {
       userData.setDevTextArea("");
       props.setDevTalkAreaError(false);
     }
+
+    //when user clicks on a radio button remove error
+    props.setRadioError(false);
   };
   useEffect(() => {
     if (userData.devtalkRadioAction === 1) {
@@ -24,6 +29,9 @@ const DevtalksRadio = (props) => {
   }, []);
   return (
     <div>
+      {props.radioError && (
+        <Error text="* required field" left="153px" top="475px" />
+      )}
       <label className={styles["devtalks__question"]}>
         Would you attend Devtalks and maybe also organize your own?
       </label>
