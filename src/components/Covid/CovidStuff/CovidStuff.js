@@ -12,15 +12,15 @@ import Context from "../../store/context";
 import CovidError from "../CovidError/CovidError";
 import Previous from "../../assets/Previous.svg";
 import CostumPlaceHolder from "./CostumPlaceholder/CostumPlaceHolder";
-
+import NextPageButton from "./NextPageButton/NextPageButton";
 const CovidStuff = () => {
   const userData = useContext(Context);
   const [workTypeError, setWorkTypeError] = useState(false);
   const [contactError, setContactError] = useState(false);
   const [whenError, setWhenError] = useState(false);
   const [whenLastVaccineError, setWhenLastVaccineError] = useState(false);
-  const [vaccinatedError, setVaccinatedError] = useState(0);
   const [showError, setShowError] = useState(false);
+
   const submitHandler = (e) => {
     //validate WorkType
     e.preventDefault();
@@ -58,7 +58,6 @@ const CovidStuff = () => {
       ? setWhenLastVaccineError(true)
       : setWhenLastVaccineError(false);
   };
-
   return (
     <>
       {userData.hadCovid && userData.hadCovidAt === "" && (
@@ -97,6 +96,7 @@ const CovidStuff = () => {
           <CovidError top="1162px" text="* required field" />
         )}
         <NextPage top="1292px" left="507px" />
+        <NextPageButton />
       </form>
       <img
         src={Balls}
@@ -115,5 +115,4 @@ const CovidStuff = () => {
     </>
   );
 };
-
 export default CovidStuff;
