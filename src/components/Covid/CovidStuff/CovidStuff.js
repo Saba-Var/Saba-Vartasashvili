@@ -81,7 +81,7 @@ const CovidStuff = () => {
           <CovidError top="640px" text="* required field" />
         )}
         <When setWhenError={setWhenError} whenError={whenError} />
-        {whenError && <CovidError top="802px" text="* required field" />}
+        {whenError && <CovidError top="802px" text="* select date" />}
         <Vaccinated
           setWhenLastVaccineError={setWhenLastVaccineError}
           setShowError={setShowError}
@@ -96,7 +96,7 @@ const CovidStuff = () => {
           whenLastVaccineError={whenLastVaccineError}
         />
         {whenLastVaccineError && (
-          <CovidError top="1162px" text="* required field" />
+          <CovidError top="1162px" text="* select date" />
         )}
         <NextPage top="1292px" left="507px" />
         <NextPageButton />

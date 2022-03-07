@@ -16,12 +16,18 @@ const Special = (props) => {
       </label>
       <textarea
         placeholder="I..."
-        className={styles["special__textarea"]}
+        className={`${styles["special__textarea"]} ${
+          props.specialAreaError && styles["red__border"]
+        }`}
         onChange={specialTextAreaHandler}
         value={userDate.specialDevTalk}
       />
       {props.specialAreaError && (
-        <Error text="* input field is empty" top="890px" left="153px" />
+        <Error
+          text="* required field - input field is empty"
+          top="890px"
+          left="153px"
+        />
       )}
     </div>
   );
