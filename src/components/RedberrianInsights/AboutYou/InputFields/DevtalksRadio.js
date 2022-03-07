@@ -1,14 +1,19 @@
 import Context from "../../../store/context";
 import { useContext, useEffect } from "react";
 import styles from "./DevtalksRadio.module.css";
-const DevtalksRadio = () => {
+const DevtalksRadio = (props) => {
   const userData = useContext(Context);
   const radioHandler = (e) => {
     userData.setDevTalkRadioAction(1);
     e.target.value === "YesDev"
       ? userData.setDevRadio(true)
       : userData.setDevRadio(false);
-    e.target.value === "NoDev" && userData.setDevTextArea("");
+
+    //if user selects No DevTalks textarea and error hide and its value deletes
+    if (e.target.value === "NoDev") {
+      userData.setDevTextArea("");
+      props.setDevTalkAreaError(false);
+    }
   };
   useEffect(() => {
     if (userData.devtalkRadioAction === 1) {
