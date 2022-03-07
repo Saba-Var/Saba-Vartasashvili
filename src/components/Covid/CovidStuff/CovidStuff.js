@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import WorkType from "./InputFields/WorkType";
 import ContactCovid from "./InputFields/ContactCovid";
 import When from "./InputFields/When";
@@ -8,10 +8,10 @@ import LastVaccine from "./InputFields/LastVaccine";
 import NextPage from "../../buttons/NextPage";
 import Balls from "../../assets/balls (2).svg";
 import styles from "./CovidStuff.module.css";
-import { useContext } from "react";
 import Context from "../../store/context";
 import CovidError from "../CovidError/CovidError";
 import Previous from "../../assets/Previous.svg";
+import CostumPlaceHolder from "./CostumPlaceholder/CostumPlaceHolder";
 
 const CovidStuff = () => {
   const userData = useContext(Context);
@@ -60,6 +60,12 @@ const CovidStuff = () => {
 
   return (
     <>
+      {userData.hadCovid && userData.hadCovidAt === "" && (
+        <CostumPlaceHolder top="753px" />
+      )}
+      {userData.vaccinated && userData.vaccinatedAt === "" && (
+        <CostumPlaceHolder top="1113px" />
+      )}
       <form onSubmit={submitHandler}>
         <WorkType
           workTypeError={workTypeError}
