@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
 const Context = React.createContext({
+  vaccinatedError: "",
+  setVaccinatedError: "",
+  covidActions: "",
+  setCovidActions: "",
   allSkillsArray: "",
   setAllSkillsArray: "",
   firstName: "",
@@ -26,6 +30,8 @@ const Context = React.createContext({
 });
 
 export const ContextProvider = (props) => {
+  const [vaccinatedError, setVaccinatedError] = useState(0);
+  const [covidActions, setCovidActions] = useState(0);
   const [allSkillsArray, setAllSkillsArray] = useState([]);
   const [firstName, setFirstName] = useState("");
   const [lastName, setlastName] = useState("");
@@ -41,6 +47,10 @@ export const ContextProvider = (props) => {
   const [vaccineAction, setVaccineAction] = useState(0);
 
   const data = {
+    vaccinatedError: vaccinatedError,
+    setVaccinatedError: setVaccinatedError,
+    covidActions: covidActions,
+    setCovidActions: setCovidActions,
     allSkillsArray: allSkillsArray,
     setAllSkillsArray: setAllSkillsArray,
     contactAction: contactAction,

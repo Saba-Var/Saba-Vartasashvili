@@ -7,7 +7,7 @@ const ContactCovid = (props) => {
     e.target.value === "Yes"
       ? userData.setHadCovid(true)
       : userData.setHadCovid(false);
-    props.setCovidActions(1);
+    userData.setCovidActions(1);
     userData.setContactAction(1);
     props.setContactError(false);
     e.target.value === "No" && props.setContactError(false);

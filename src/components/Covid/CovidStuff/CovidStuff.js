@@ -16,7 +16,6 @@ import CostumPlaceHolder from "./CostumPlaceholder/CostumPlaceHolder";
 const CovidStuff = () => {
   const userData = useContext(Context);
   const [workTypeError, setWorkTypeError] = useState(false);
-  const [covidActions, setCovidActions] = useState(0);
   const [contactError, setContactError] = useState(false);
   const [whenError, setWhenError] = useState(false);
   const [whenLastVaccineError, setWhenLastVaccineError] = useState(false);
@@ -30,7 +29,9 @@ const CovidStuff = () => {
       : setWorkTypeError(false);
 
     //validate ContactCovid
-    covidActions === 0 ? setContactError(true) : setContactError(false);
+    userData.covidActions === 0
+      ? setContactError(true)
+      : setContactError(false);
     userData.hadCovid === false &&
       userData.hadCovidAt !== "" &&
       userData.setHadCovidAt("");
@@ -46,7 +47,7 @@ const CovidStuff = () => {
     userData.vaccinated === false &&
       userData.vaccinated !== "" &&
       userData.setVaccinatedAt("");
-    vaccinatedError === 0 && setShowError(true);
+    userData.vaccinatedError === 0 && setShowError(true);
 
     //validate LastVaccine/date input
     userData.vaccinated === "" && userData.setVaccinated(false);
@@ -73,9 +74,7 @@ const CovidStuff = () => {
         />
         {workTypeError && <CovidError top="475px" text="* required field" />}
         <ContactCovid
-          covidActions={covidActions}
           contactError={contactError}
-          setCovidActions={setCovidActions}
           setContactError={setContactError}
           setWhenError={setWhenError}
         />
@@ -87,7 +86,6 @@ const CovidStuff = () => {
         <Vaccinated
           setWhenLastVaccineError={setWhenLastVaccineError}
           setShowError={setShowError}
-          setVaccinatedError={setVaccinatedError}
         />
 
         {showError && userData.vaccineAction === 0 && (
