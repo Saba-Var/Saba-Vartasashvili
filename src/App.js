@@ -6,7 +6,7 @@ import Covid from "./components/Covid/Covid";
 import RedberrianInsights from "./components/RedberrianInsights/RedberrianInsights";
 import Submit from "./components/Submit/Submit";
 import Cursor from "./components/CostumCursor/CostumCursor";
-
+import Thanks from "./components/Thanks/Thanks";
 function App() {
   return (
     <Router>
@@ -18,6 +18,7 @@ function App() {
         <Route path="/Covid" element={<Covid />} />
         <Route path="/Redberrian-Insights" element={<RedberrianInsights />} />
         <Route path="/Submit" element={<Submit />} />
+        <Route path="/Thanks" element={<Thanks />} />
       </Routes>
     </Router>
   );

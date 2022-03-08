@@ -1,5 +1,6 @@
-import styles from "./SubmitButton.module.css";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
+import styles from "./SubmitButton.module.css";
 import Context from "../../store/context";
 const SubmitButton = () => {
   const userData = useContext(Context);
@@ -133,12 +134,14 @@ const SubmitButton = () => {
   };
 
   return (
-    <div className={styles["button-container-1"]}>
-      <span className={styles.text}>Submit</span>
-      <button id="work" type="button" name="Hover" onClick={sendDataHandler}>
-        Submit
-      </button>
-    </div>
+    <Link to="/Thanks">
+      <div className={styles["button-container-1"]}>
+        <span className={styles.text}>Submit</span>
+        <button id="work" type="button" name="Hover" onClick={sendDataHandler}>
+          Submit
+        </button>
+      </div>
+    </Link>
   );
 };
 
