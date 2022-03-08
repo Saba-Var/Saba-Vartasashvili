@@ -4,4 +4,8 @@
   height: 19px;
   background: #ffece8;
   border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.navWhite:hover {
+  transform: scale(1.5);
 }

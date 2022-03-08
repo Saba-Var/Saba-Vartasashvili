@@ -2,4 +2,9 @@
   position: absolute;
   width: 22px;
   height: 22px;
+  transition: all 0.3s ease;
+}
+
+.btnPrev:hover {
+  transform: scale(1.5);
 }
