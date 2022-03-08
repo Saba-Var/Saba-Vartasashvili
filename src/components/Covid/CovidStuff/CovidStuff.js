@@ -99,8 +99,10 @@ const CovidStuff = () => {
           <CovidError top="1162px" text="* select date" />
         )}
         <NextPage top="1292px" left="507px" />
+        <NextPage top="1292px" left="507px" />
         <NextPageButton />
       </form>
+      <Previous to="/Technical-Skillset" top="1290px" left="290px" />
       <Previous to="/Technical-Skillset" top="1290px" left="290px" />
       <NavigationRed to="/" top="1292px" left="330px" />
       <NavigationRed to="/Personal-Information" top="1292px" left="364px" />

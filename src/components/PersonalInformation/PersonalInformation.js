@@ -29,6 +29,7 @@ const PersonalInformation = () => {
           <NavigationWhite top="902px" left="479px" />
           <NavigationWhite top="902px" left="513px" />
           <Previous left="340px" top="900px" to="/" />
+          <Previous left="340px" top="900px" to="/" />
         </div>
       </div>
     </>

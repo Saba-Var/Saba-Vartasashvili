@@ -70,7 +70,16 @@ const AboutYou = () => {
         <NavigationRed to="/Covid" top="963.5px" left="443px" />
         <NavigationWhite top="963.5px" left="477px" />
         <NextPage top="962px" left="518px" />
-
+        <NextPage top="962px" left="518px" />
+        <Link to="/Covid">
+          <button>
+            <img
+              src={Previous}
+              alt="previous icons"
+              className={styles["pagination__previous"]}
+            />
+          </button>
+        </Link>
         {/* if radio input is checked(No) and special dev talk textarea is not empty */}
         {radioSpecialAreaChecked && userDate.devRadio === false && (
           <NextPageLink top="962px" left="518px" path="/Submit" />

@@ -130,6 +130,14 @@ const SkillsForm = (props) => {
         </div>
         <AddButton items={items} />
       </form>
+      <button onClick={clickHandler}>
+        <img
+          src={Next}
+          alt="pagination ball"
+          className={styles["pagination__next"]}
+          style={{ top: "888px", left: "521px" }}
+        />
+      </button>
       <SkillSet items={items} setItems={setItems} />
       <NavigationRed to="/" top="890px" left="344px" />
       <NavigationRed to="/Personal-Information" top="890px" left="378px" />
@@ -139,16 +147,7 @@ const SkillsForm = (props) => {
       {userData.skills.length > 0 && (
         <NextPageLink path="/Covid" top="888px" left="521px" />
       )}
-      {userData.skills.length === 0 && (
-        <button onClick={clickHandler}>
-          <img
-            src={Next}
-            alt="pagination ball"
-            className={styles["pagination__next"]}
-            style={{ top: "888px", left: "521px" }}
-          />
-        </button>
-      )}
+      <Previous top="888px" left="300px" to="/Personal-Information" />
       <Previous top="888px" left="300px" to="/Personal-Information" />
     </div>
   );

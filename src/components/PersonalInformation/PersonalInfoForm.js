@@ -106,6 +106,7 @@ const PersonalInfoForm = () => {
       />
       <Email emailError={emailError} lowAmountEmail={lowAmountEmail} />
       <PhoneNumber number={number} />
+      <NextPage top="901px" left="554px" />
       {route}
     </form>
   );
