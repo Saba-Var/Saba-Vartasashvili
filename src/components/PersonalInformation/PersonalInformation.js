@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
 import styles from "./PersonalInformation.module.css";
-import Balls from "../assets/balls.svg";
 import PersonalInfoForm from "./PersonalInfoForm";
-import Previous from "../assets/Previous.svg";
-
+import NavigationRed from "../buttons/NavigationRed";
+import NavigationWhite from "../buttons/NavigationWhite";
+import Previous from "../buttons/Previous";
 const PersonalInformation = () => {
   return (
     <>
@@ -24,18 +23,12 @@ const PersonalInformation = () => {
         </p>
         <PersonalInfoForm />
         <div>
-          <img
-            src={Balls}
-            alt="pagination balls"
-            className={styles["pagination__balls"]}
-          />
-          <Link to={"/"}>
-            <img
-              src={Previous}
-              alt="pagination ball"
-              className={styles["pagination__previous"]}
-            />
-          </Link>
+          <NavigationRed to="/" top="902px" left="377px" />
+          <NavigationWhite top="902px" left="411px" />
+          <NavigationWhite top="902px" left="445px" />
+          <NavigationWhite top="902px" left="479px" />
+          <NavigationWhite top="902px" left="513px" />
+          <Previous left="340px" top="900px" to="/" />
         </div>
       </div>
     </>

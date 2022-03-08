@@ -1,15 +1,14 @@
 import { useEffect, useState, useContext } from "react";
 import styles from "./SkillsForm.module.css";
 import DropdownArrow from "../../assets/DrowpdownArrow.svg";
-import ballsSkills from "../../assets/balls-Skills.svg";
+import NavigationRed from "../../buttons/NavigationRed";
 import AddButton from "./AddButton";
 import SkillSet from "./Skillset";
 import Context from "../../store/context";
 import Next from "../../assets/Next.svg";
 import NextPageLink from "../../buttons/NextPageLink";
-import PreviousButton from "../../assets/Previous.svg";
-import { Link } from "react-router-dom";
-
+import Previous from "../../buttons/Previous.js";
+import NavigationWhite from "../../buttons/NavigationWhite";
 const SkillsForm = (props) => {
   const userData = useContext(Context);
   const [skillsList, setSkillsList] = useState([]);
@@ -132,13 +131,13 @@ const SkillsForm = (props) => {
         <AddButton items={items} />
       </form>
       <SkillSet items={items} setItems={setItems} />
-      <img
-        className={styles.pagination}
-        src={ballsSkills}
-        alt="pagination balls"
-      />
+      <NavigationRed to="/" top="890px" left="344px" />
+      <NavigationRed to="/Personal-Information" top="890px" left="378px" />
+      <NavigationWhite top="890px" left="412px" />
+      <NavigationWhite top="890px" left="446px" />
+      <NavigationWhite top="890px" left="480px" />
       {userData.skills.length > 0 && (
-        <NextPageLink path="/Covid" top={"888px"} left={"521px"} />
+        <NextPageLink path="/Covid" top="888px" left="521px" />
       )}
       {userData.skills.length === 0 && (
         <button onClick={clickHandler}>
@@ -150,13 +149,7 @@ const SkillsForm = (props) => {
           />
         </button>
       )}
-      <Link to="/Personal-Information">
-        <img
-          className={styles.btnPrev}
-          src={PreviousButton}
-          alt="pagination button"
-        />
-      </Link>
+      <Previous top="888px" left="300px" to="/Personal-Information" />
     </div>
   );
 };

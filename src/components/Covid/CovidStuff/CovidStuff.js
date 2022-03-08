@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import WorkType from "./InputFields/WorkType";
 import ContactCovid from "./InputFields/ContactCovid";
@@ -6,13 +5,14 @@ import When from "./InputFields/When";
 import Vaccinated from "./InputFields/Vaccinated";
 import LastVaccine from "./InputFields/LastVaccine";
 import NextPage from "../../buttons/NextPage";
-import Balls from "../../assets/balls (2).svg";
-import styles from "./CovidStuff.module.css";
 import Context from "../../store/context";
 import CovidError from "../CovidError/CovidError";
-import Previous from "../../assets/Previous.svg";
 import CostumPlaceHolder from "./CostumPlaceholder/CostumPlaceHolder";
 import NextPageButton from "./NextPageButton/NextPageButton";
+import Previous from "../../buttons/Previous";
+import NavigationRed from "../../buttons/NavigationRed";
+import NavigationWhite from "../../buttons/NavigationWhite";
+
 const CovidStuff = () => {
   const userData = useContext(Context);
   const [workTypeError, setWorkTypeError] = useState(false);
@@ -101,20 +101,12 @@ const CovidStuff = () => {
         <NextPage top="1292px" left="507px" />
         <NextPageButton />
       </form>
-      <img
-        src={Balls}
-        alt="pagination icons"
-        className={styles["pagination__balls"]}
-      />
-      <Link to="/Technical-Skillset">
-        <button>
-          <img
-            src={Previous}
-            alt="pagination icons"
-            className={styles["pagination__previous"]}
-          />
-        </button>
-      </Link>
+      <Previous to="/Technical-Skillset" top="1290px" left="290px" />
+      <NavigationRed to="/" top="1292px" left="330px" />
+      <NavigationRed to="/Personal-Information" top="1292px" left="364px" />
+      <NavigationRed to="/Technical-Skillset" top="1292px" left="398px" />
+      <NavigationWhite top="1292px" left="432px" />
+      <NavigationWhite top="1292px" left="466px" />
     </>
   );
 };

@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-
 import styles from "./Thanks.module.css";
-
 import { Navigate } from "react-router-dom";
 
 const Thanks = () => {

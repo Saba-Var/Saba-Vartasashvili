@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Context from "../store/context";
-import { useState } from "react";
 import NextPage from "../buttons/NextPage";
 import FirstName from "./InputFields/FirstName";
 import NextPageLink from "../buttons/NextPageLink";
@@ -89,9 +88,9 @@ const PersonalInfoForm = () => {
     userData.email.indexOf("@") < userData.email.indexOf(".") &&
     (fullNumber || userData.phoneNumber.length === 0);
   const route = nextPage ? (
-    <NextPageLink path="/Technical-Skillset" />
+    <NextPageLink path="/Technical-Skillset" top="901px" left="554px" />
   ) : (
-    <NextPage />
+    <NextPage top="901px" left="554px" />
   );
   return (
     <form onSubmit={submitHandler} noValidate>

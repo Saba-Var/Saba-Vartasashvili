@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import Context from "../../store/context";
-import Balls from "../../assets/aboutBalls.svg";
+import NavigationRed from "../../buttons/NavigationRed";
+import NavigationWhite from "../../buttons/NavigationWhite";
 import Previous from "../../assets/Previous.svg";
 import styles from "./AboutYou.module.css";
 import DevtalksRadio from "./InputFields/DevtalksRadio";
@@ -63,16 +64,16 @@ const AboutYou = () => {
             />
           </button>
         </Link>
-        <img
-          src={Balls}
-          alt="pagination icons"
-          className={styles["pagination__balls"]}
-        />
-        <NextPage top={"962px"} left={"518px"} />
+        <NavigationRed top="963.5px" left="341px" to="/" />
+        <NavigationRed to="/Personal-Information" top="963.5px" left="375px" />
+        <NavigationRed to="/Technical-Skillset" top="963.5px" left="409px" />
+        <NavigationRed to="/Covid" top="963.5px" left="443px" />
+        <NavigationWhite top="963.5px" left="477px" />
+        <NextPage top="962px" left="518px" />
 
         {/* if radio input is checked(No) and special dev talk textarea is not empty */}
         {radioSpecialAreaChecked && userDate.devRadio === false && (
-          <NextPageLink top={"962px"} left={"518px"} path="/Submit" />
+          <NextPageLink top="962px" left="518px" path="/Submit" />
         )}
 
         {/* if radio input is checked(Yes)) and devTalk and special dev talk textareas are not empty */}
