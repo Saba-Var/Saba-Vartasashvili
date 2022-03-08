@@ -8,13 +8,16 @@ import DevtalksRadio from "./InputFields/DevtalksRadio";
 import DevTalksTopic from "./InputFields/DevtalksTopic";
 import Special from "./InputFields/Special";
 import NextPage from "../../buttons/NextPage";
+import NextPageLink from "../../buttons/NextPageLink";
 
 const AboutYou = () => {
   const userDate = useContext(Context);
   const [devTalkAreaError, setDevTalkAreaError] = useState(false);
   const [radioError, setRadioError] = useState(false);
   const [specialAreaError, setSpecialError] = useState(false);
-
+  const radioSpecialAreaChecked =
+    userDate.devtalkRadioAction === 1 &&
+    userDate.specialDevTalk.trim().length > 0;
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -66,6 +69,18 @@ const AboutYou = () => {
           className={styles["pagination__balls"]}
         />
         <NextPage top={"962px"} left={"518px"} />
+
+        {/* if radio input is checked(No) and special dev talk textarea is not empty */}
+        {radioSpecialAreaChecked && userDate.devRadio === false && (
+          <NextPageLink top={"962px"} left={"518px"} path="/Submit" />
+        )}
+
+        {/* if radio input is checked(Yes)) and devTalk and special dev talk textareas are not empty */}
+        {radioSpecialAreaChecked &&
+          userDate.devRadio === true &&
+          userDate.devTextarea.trim().length > 0 && (
+            <NextPageLink top={"962px"} left={"518px"} path="/Submit" />
+          )}
       </form>
     </>
   );

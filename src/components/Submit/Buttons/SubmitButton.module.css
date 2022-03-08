@@ -1,0 +1,106 @@
+.button-container-1,
+.button-container-1 button,
+.text {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+.button-container-1 {
+  position: absolute;
+  width: 395px;
+  height: 79px;
+  left: 758px;
+  top: 458px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  background: #ff0000;
+  border-radius: 50px;
+}
+
+.button-container-1 button {
+  width: 100%;
+  height: 100%;
+  background: #fe3b1f;
+  justify-content: center;
+  border-radius: 50px;
+  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+  border: none;
+  cursor: pointer;
+  -webkit-animation: an2 0.7s steps(22) forwards;
+  animation: an2 0.7s steps(22) forwards;
+}
+
+.button-container-1 button:hover {
+  -webkit-animation: an1 0.7s steps(22) forwards;
+  transform: scale(1.05);
+  animation: an1 0.7s steps(22) forwards;
+}
+
+.text {
+  position: absolute;
+  color: #000;
+  width: 101%;
+  position: absolute;
+  overflow: hidden;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 42px;
+}
+
+@-webkit-keyframes an1 {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes an1 {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@-webkit-keyframes an2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+@keyframes an2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+.button-container-1:active {
+  transform: scale(0.95);
+}

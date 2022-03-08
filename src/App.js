@@ -4,7 +4,7 @@ import PersonalInformation from "./components/PersonalInformation/PersonalInform
 import TechnicalSkillset from "./components/TechnicalSkillset/TechnicalSkillset";
 import Covid from "./components/Covid/Covid";
 import RedberrianInsights from "./components/RedberrianInsights/RedberrianInsights";
-
+import Submit from "./components/Submit/Submit";
 function App() {
   return (
     <Router>
@@ -14,6 +14,7 @@ function App() {
         <Route path="/Technical-Skillset" element={<TechnicalSkillset />} />
         <Route path="/Covid" element={<Covid />} />
         <Route path="/Redberrian-Insights" element={<RedberrianInsights />} />
+        <Route path="/Submit" element={<Submit />} />
       </Routes>
     </Router>
   );
