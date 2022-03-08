@@ -109,6 +109,27 @@ const SubmitButton = () => {
       body: JSON.stringify(data),
     };
     fetch("https://bootcamp-2022.devtest.ge/api/application", requestOptions);
+
+    //reset context api after POST
+    userData.setDevTalkRadioAction(0);
+    userData.setVaccinatedError(0);
+    userData.setCovidActions(0);
+    userData.setAllSkillsArray([]);
+    userData.setFirstName("");
+    userData.setlastName("");
+    userData.setEmail("");
+    userData.setPhoneNumber("");
+    userData.setSkills("");
+    userData.setWorkPreference("");
+    userData.setHadCovid(false);
+    userData.setHadCovidAt("");
+    userData.setVaccinated(false);
+    userData.setVaccinatedAt("");
+    userData.setContactAction(0);
+    userData.setVaccineAction(0);
+    userData.setDevRadio("");
+    userData.setDevTextArea("");
+    userData.setSpecialDevTalks("");
   };
 
   return (
