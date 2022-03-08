@@ -5,9 +5,12 @@ import TechnicalSkillset from "./components/TechnicalSkillset/TechnicalSkillset"
 import Covid from "./components/Covid/Covid";
 import RedberrianInsights from "./components/RedberrianInsights/RedberrianInsights";
 import Submit from "./components/Submit/Submit";
+import Cursor from "./components/CostumCursor/CostumCursor";
+
 function App() {
   return (
     <Router>
+      <Cursor />
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/Personal-Information" element={<PersonalInformation />} />

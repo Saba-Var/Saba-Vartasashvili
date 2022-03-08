@@ -1,0 +1,29 @@
+.cursor-dot-outline,
+.cursor-dot {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.cursor-dot {
+  width: 1rem;
+  height: 1rem;
+  background-color: #fe3b1f;
+  z-index: 9999999999999;
+}
+.mix-blend-mode {
+  mix-blend-mode: difference;
+}
+.cursor-dot-outline {
+  background-color: rgba(170, 170, 170, 0.493);
+  z-index: 9999999999999999;
+  opacity: 0.1;
+  width: 5rem;
+  height: 5rem;
+  transition: width 0.5s background-color ease-in-out;
+}

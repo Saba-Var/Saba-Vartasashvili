@@ -34,8 +34,6 @@
   height: 19px;
   left: 583px;
   top: 756px;
-
-  /* Redberry Red */
   z-index: -99;
 }
 
@@ -49,5 +47,5 @@
 
 ::-webkit-calendar-picker-indicator {
   opacity: 0;
-  cursor: pointer;
+  cursor: none;
 }

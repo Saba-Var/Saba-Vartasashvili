@@ -35,7 +35,7 @@
   -webkit-mask-size: 2300% 100%;
   mask-size: 2300% 100%;
   border: none;
-  cursor: pointer;
+
   -webkit-animation: an2 0.7s steps(22) forwards;
   animation: an2 0.7s steps(22) forwards;
 }

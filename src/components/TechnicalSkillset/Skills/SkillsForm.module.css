@@ -17,7 +17,7 @@
   padding-left: 57px;
   padding-right: 30px;
   box-shadow: none;
-  cursor: pointer;
+
   background-color: transparent;
 }
 .form select {
@@ -112,5 +112,4 @@
   height: 22px;
   left: 554px;
   top: 900px;
-  cursor: pointer;
 }
