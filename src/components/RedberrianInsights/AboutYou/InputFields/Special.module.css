@@ -33,6 +33,7 @@
   display: flex;
   align-items: center;
   color: #000000;
+  overflow-y: hidden;
 }
 
 .special__textarea::-webkit-input-placeholder {
