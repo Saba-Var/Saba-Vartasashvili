@@ -70,6 +70,8 @@ h2 {
   transition: all 0.4s ease-out;
   width: 1154px;
   height: 1542px;
+  padding-left: 158px;
+  padding-right: 62px;
 }
 
 .container .item.open .top {

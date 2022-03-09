@@ -22,7 +22,7 @@ function SubmitedList() {
     }
     fetchSubmittedList();
   }, []);
-  console.log(data);
+
   const toggle = (index) => {
     setdata(
       data.map((content, i) => {
