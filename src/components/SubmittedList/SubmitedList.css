@@ -69,7 +69,6 @@ h2 {
   overflow-y: hidden;
   transition: all 0.4s ease-out;
   width: 1154px;
-  height: 1542px;
   padding-left: 158px;
   padding-right: 62px;
   display: flex;
@@ -85,8 +84,9 @@ h2 {
 }
 
 .container .item.open .content {
-  max-height: 1000px;
+  max-height: 1542px;
   opacity: 1;
+  padding-bottom: 220px;
 }
 
 .flex {

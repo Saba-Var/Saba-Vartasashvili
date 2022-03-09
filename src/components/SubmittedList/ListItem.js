@@ -2,6 +2,7 @@ import React from "react";
 import SkillSet from "./UserInformation/SkillSet";
 import PersonalInformation from "./UserInformation/PersonalInformation";
 import WorkRadio from "./UserInformation/WorkRadio";
+import HadCovidRadio from "./UserInformation/HadCovidRadio";
 function ListItem({ data, index, toggle }) {
   return (
     <div className={"item " + (data.open ? "open" : "")} key={index}>
@@ -13,8 +14,9 @@ function ListItem({ data, index, toggle }) {
           <PersonalInformation userData={data} />
           <SkillSet userData={data} />
         </div>
-        <div className="flex">
+        <div>
           <WorkRadio userData={data} />
+          <HadCovidRadio userData={data} />
         </div>
       </div>
     </div>

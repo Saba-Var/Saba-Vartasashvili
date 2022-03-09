@@ -1,0 +1,31 @@
+.hadCovid__container {
+  padding-top: 75px;
+}
+.radio,
+.had__Covid {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.work__type__office {
+  font-size: 18px;
+  line-height: 22px;
+}
+.radio {
+  font-size: 14px;
+  line-height: 17px;
+}
+.radioContainer {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
