@@ -1,0 +1,49 @@
+header {
+  position: absolute;
+  width: 288px;
+  height: 37px;
+  left: 0;
+  top: 17px;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  text-decoration-line: underline;
+  color: #fe3b1f;
+}
+.p {
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.skillset__container {
+  width: 473px;
+  height: 299px;
+  position: relative;
+  padding-top: 30px;
+  padding-top: 75px;
+}
+.flex {
+  display: flex;
+  height: 299px;
+  padding-top: 23px;
+}
+
+.left {
+  padding-left: 64px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  height: 80%;
+}

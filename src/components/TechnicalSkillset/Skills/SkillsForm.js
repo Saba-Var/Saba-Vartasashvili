@@ -85,6 +85,7 @@ const SkillsForm = (props) => {
   const clickHandler = () => {
     userData.skills.length === 0 ? setEmpty(true) : setEmpty(false);
   };
+
   return (
     <div>
       {error && (
