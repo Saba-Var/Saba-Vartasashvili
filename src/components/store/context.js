@@ -1,42 +1,6 @@
 import React, { useState } from "react";
 
-const Context = React.createContext({
-  token: "",
-  specialDevTalk: "",
-  setSpecialDevTalks: "",
-  devTextarea: "",
-  setDevTextArea: "",
-  devRadio: "",
-  setDevRadio: "",
-  devtalkRadioAction: "",
-  setDevTalkRadioAction: "",
-  vaccinatedError: "",
-  setVaccinatedError: "",
-  covidActions: "",
-  setCovidActions: "",
-  allSkillsArray: "",
-  setAllSkillsArray: "",
-  firstName: "",
-  setFirstName: "",
-  lastName: "",
-  setlastName: "",
-  email: "",
-  setEmail: "",
-  phoneNumber: "",
-  setPhoneNumber: "",
-  skills: [],
-  setSkills: "",
-  workPreference: "",
-  setWorkPreference: "",
-  hadCovid: "",
-  setHadCovid: "",
-  hadCovidAt: "",
-  setHadCovidAt: "",
-  vaccinated: "",
-  setVaccinated: "",
-  vaccinatedAt: "",
-  setVaccinatedAt: "",
-});
+const Context = React.createContext([]);
 
 export const ContextProvider = (props) => {
   const [devtalkRadioAction, setDevTalkRadioAction] = useState(0);
@@ -98,7 +62,7 @@ export const ContextProvider = (props) => {
     setVaccinated: setVaccinated,
     vaccinatedAt: vaccinatedAt,
     setVaccinatedAt: setVaccinatedAt,
-    token: "ee723206-dea9-4aa6-960d-a163a75432c8",
+    token: "b4d3756e-3145-4f42-b5e8-a6f915997ee8",
   };
 
   return <Context.Provider value={data}>{props.children}</Context.Provider>;
