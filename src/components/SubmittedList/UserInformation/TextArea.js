@@ -6,10 +6,9 @@ const TextArea = (props) => {
       <textarea
         className={styles["textArea__Container"]}
         style={{ height: props.height }}
+        defaultValue={props.text === "NAN" ? "No information" : props.text}
         disabled
-      >
-        {props.text === "NAN" ? "No information" : props.text}
-      </textarea>
+      />
     </>
   );
 };
