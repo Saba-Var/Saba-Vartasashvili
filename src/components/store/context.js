@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const Context = React.createContext({
+  token: "",
   specialDevTalk: "",
   setSpecialDevTalks: "",
   devTextarea: "",
@@ -97,6 +98,7 @@ export const ContextProvider = (props) => {
     setVaccinated: setVaccinated,
     vaccinatedAt: vaccinatedAt,
     setVaccinatedAt: setVaccinatedAt,
+    token: "ee723206-dea9-4aa6-960d-a163a75432c8",
   };
 
   return <Context.Provider value={data}>{props.children}</Context.Provider>;
