@@ -5,9 +5,10 @@
 }
 .thanks {
   position: absolute;
-  width: 1066px;
+  width: 1266px;
   height: 191px;
-  left: 427px;
+  left: 50%;
+  transform: translateX(-50%);
   top: 444px;
   font-family: Rowdies;
   font-style: normal;
