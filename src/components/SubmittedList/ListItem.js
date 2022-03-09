@@ -5,7 +5,7 @@ import Vaccinated from "./UserInformation/Vaccinated";
 import WorkRadio from "./UserInformation/WorkRadio";
 import SkillSet from "./UserInformation/SkillSet";
 import DateIcon from "./DateIcon/DateIcon";
-
+import DevOrganizeRadio from "./UserInformation/DevOrganizeRadio";
 function ListItem({ data, index, toggle }) {
   return (
     <div className={"item " + (data.open ? "open" : "")} key={index}>
@@ -17,18 +17,23 @@ function ListItem({ data, index, toggle }) {
           <PersonalInformation userData={data} />
           <SkillSet userData={data} />
         </div>
-        <div>
-          <WorkRadio userData={data} />
-          <HadCovidRadio userData={data} />
-          <DateIcon
-            date={data.had_covid_at}
-            header="When did you have covid 19?"
-          />
-          <Vaccinated userData={data} />
-          <DateIcon
-            date={data.vaccinated_at}
-            header="When did you get covid vaccine?"
-          />
+        <div className="flex gap">
+          <div>
+            <WorkRadio userData={data} />
+            <HadCovidRadio userData={data} />
+            <DateIcon
+              date={data.had_covid_at}
+              header="When did you have covid 19?"
+            />
+            <Vaccinated userData={data} />
+            <DateIcon
+              date={data.vaccinated_at}
+              header="When did you get covid vaccine?"
+            />
+          </div>
+          <div>
+            <DevOrganizeRadio userData={data} />
+          </div>
         </div>
       </div>
     </div>
