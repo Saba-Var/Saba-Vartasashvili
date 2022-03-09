@@ -49,8 +49,17 @@
   height: 12px;
   left: 176px;
   border: 1px solid #293b69;
+  transition: all 0.3s ease;
 }
-
+.radio1:hover {
+  transform: scale(2);
+}
+.radio2:hover {
+  transform: scale(2);
+}
+.radio3:hover {
+  transform: scale(2);
+}
 .radio1 {
   top: 367px;
 }

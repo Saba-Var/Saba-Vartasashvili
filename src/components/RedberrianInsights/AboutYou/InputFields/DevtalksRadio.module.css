@@ -19,14 +19,23 @@
   width: 12px;
   height: 12px;
   left: 163px;
+  transition: all 0.3s ease;
 }
 
 .dev_radio1 {
   top: 411px;
 }
 
+.dev_radio1:hover {
+  transform: scale(2);
+}
+
 .dev_radio2 {
   top: 449px;
+}
+
+.dev_radio2:hover {
+  transform: scale(2);
 }
 
 .option__yes,
