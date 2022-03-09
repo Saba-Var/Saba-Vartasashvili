@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import "./SubmitedList.css";
 import ListItem from "./ListItem";
 import Context from "../store/context";
+import GoBackButton from "../Submit/Buttons/GoBackButton";
 function SubmitedList() {
   const userData = useContext(Context);
   const [data, setdata] = useState([]);
@@ -38,6 +39,7 @@ function SubmitedList() {
 
   return (
     <div className="submit__background">
+      <GoBackButton top="180px" left="336px" to="/" />
       <h2>Submitted Applications</h2>
       <div className="container">
         {data.map((data, i) => (

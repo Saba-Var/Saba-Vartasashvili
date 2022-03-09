@@ -7,7 +7,7 @@ const Submit = () => {
       <div className={styles["submit__container"]}>
         <SubmitButton />
       </div>
-      <GoBackButton />
+      <GoBackButton top="572px" left="861px" to="/Redberrian-Insights" />
     </>
   );
 };
