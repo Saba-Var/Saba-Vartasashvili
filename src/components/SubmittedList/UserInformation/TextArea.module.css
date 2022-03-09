@@ -1,0 +1,27 @@
+.textArea__Container {
+  width: 447px;
+  border: 1px solid #525557;
+  padding: 24px 23px;
+  margin-top: 29px;
+  margin-bottom: 50px;
+}
+
+.header,
+.textArea__text {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.header {
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  padding-top: 5px;
+}
+
+.textArea__text {
+  font-size: 13px;
+  line-height: 16px;
+  color: #3a3a3a;
+}

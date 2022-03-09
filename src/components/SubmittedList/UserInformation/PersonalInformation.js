@@ -15,7 +15,9 @@ const PersonalInformation = (props) => {
           <p className={styles.p2}>{data.first_name}</p>
           <p className={styles.p2}>{data.last_name}</p>
           <p className={styles.p2}>{data.email}</p>
-          <p className={styles.p2}>{data.phone}</p>
+          <p className={styles.p2}>
+            {data.phone === "NAN" ? "No information" : data.phone}
+          </p>
         </div>
       </div>
     </div>

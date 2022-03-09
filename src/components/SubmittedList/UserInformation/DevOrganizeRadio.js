@@ -8,7 +8,7 @@ const DevOrganizeRadio = (props) => {
     <div className={styles["organizeRadio__container"]}>
       <div className={styles.flex}>
         <p className={styles.header}>Insights</p>
-        <p className={styles["work__type__office"]}>
+        <p className={styles["question"]}>
           Would you attend Devtalks and maybe also organize your own?
         </p>
         <div className={styles.radioContainer}>
