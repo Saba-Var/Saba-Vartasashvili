@@ -4,24 +4,24 @@
   padding: 24px 23px;
   margin-top: 29px;
   margin-bottom: 50px;
-}
-
-.header,
-.textArea__text {
+  background-color: white;
+  resize: none;
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #3a3a3a;
 }
 
 .header {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
   font-size: 18px;
   line-height: 22px;
   color: #000000;
   padding-top: 5px;
-}
-
-.textArea__text {
-  font-size: 13px;
-  line-height: 16px;
-  color: #3a3a3a;
 }

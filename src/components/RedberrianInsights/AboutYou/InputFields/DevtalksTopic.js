@@ -22,7 +22,7 @@ const DevTalksTopic = (props) => {
             placeholder="I would..."
             onChange={devTextareaHandler}
             value={userDate.devTextarea}
-            maxLength={150}
+            maxLength={213}
           />
           {props.devTalkAreaError && (
             <Error text="* input field is empty" top="705px" left="153px" />

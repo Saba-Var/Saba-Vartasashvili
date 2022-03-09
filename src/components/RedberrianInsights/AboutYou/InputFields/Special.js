@@ -21,7 +21,7 @@ const Special = (props) => {
         }`}
         onChange={specialTextAreaHandler}
         value={userDate.specialDevTalk}
-        maxLength={100}
+        maxLength={142}
       />
       {props.specialAreaError && (
         <Error

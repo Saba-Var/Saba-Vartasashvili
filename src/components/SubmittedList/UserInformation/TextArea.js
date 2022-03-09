@@ -3,14 +3,13 @@ const TextArea = (props) => {
   return (
     <>
       <p className={styles.header}>{props.header}</p>
-      <div
+      <textarea
         className={styles["textArea__Container"]}
         style={{ height: props.height }}
+        disabled
       >
-        <p className={styles["textArea__text"]}>
-          {props.text === "NAN" ? "No information" : props.text}
-        </p>
-      </div>
+        {props.text === "NAN" ? "No information" : props.text}
+      </textarea>
     </>
   );
 };
