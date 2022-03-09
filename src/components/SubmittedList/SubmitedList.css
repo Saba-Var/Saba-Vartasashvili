@@ -1,0 +1,86 @@
+.submit__background {
+  background-color: rgba(12, 13, 14, 1);
+  height: 100vh;
+}
+h2 {
+  position: absolute;
+  width: 1128px;
+  height: 100px;
+  left: 370px;
+  top: 94px;
+  font-family: Rowdies;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 56px;
+  line-height: 70px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.11em;
+  color: #ffffff;
+}
+.container {
+  padding-top: 249px;
+  background-color: rgba(12, 13, 14, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 98px;
+}
+
+.container .item {
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 11px;
+}
+
+.container .item .top {
+  position: relative;
+  font-size: 20px;
+  padding-right: 80px;
+  background: #fe3b1f;
+  transition: all 0.4s ease;
+  height: 52px;
+  width: 1154px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding-left: 27px;
+}
+
+.container .item .top::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  width: 12.02px;
+  height: 7.42px;
+  background-image: url("../assets/downArrow.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: all 0.4s ease-out;
+  padding-right: 23px;
+}
+
+.container .item .content {
+  opacity: 0;
+  max-height: 0;
+  overflow-y: hidden;
+  transition: all 0.4s ease-out;
+  width: 1154px;
+  height: 1542px;
+}
+
+.container .item.open .top {
+  margin-bottom: 15px;
+}
+
+.container .item.open .top::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.container .item.open .content {
+  max-height: 1000px;
+  opacity: 1;
+}

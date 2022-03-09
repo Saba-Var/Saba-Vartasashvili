@@ -7,6 +7,7 @@ import RedberrianInsights from "./components/RedberrianInsights/RedberrianInsigh
 import Submit from "./components/Submit/Submit";
 import Cursor from "./components/CostumCursor/CostumCursor";
 import Thanks from "./components/Thanks/Thanks";
+import SubmitedList from "./components/SubmittedList/SubmitedList";
 function App() {
   return (
     <Router>
@@ -19,6 +20,7 @@ function App() {
         <Route path="/Redberrian-Insights" element={<RedberrianInsights />} />
         <Route path="/Submit" element={<Submit />} />
         <Route path="/Thanks" element={<Thanks />} />
+        <Route path="/SubmitedList" element={<SubmitedList />} />
       </Routes>
     </Router>
   );

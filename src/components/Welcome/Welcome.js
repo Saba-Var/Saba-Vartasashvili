@@ -25,9 +25,11 @@ const Welcome = () => {
           </button>
         </div>
       </Link>
-      <button className={styles["button__submitted"]}>
-        Submitted Applications
-      </button>
+      <Link to="/SubmitedList">
+        <button className={styles["button__submitted"]}>
+          Submitted Applications
+        </button>
+      </Link>
     </div>
   );
 };
