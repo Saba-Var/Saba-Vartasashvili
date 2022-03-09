@@ -3,6 +3,7 @@ import SkillSet from "./UserInformation/SkillSet";
 import PersonalInformation from "./UserInformation/PersonalInformation";
 import WorkRadio from "./UserInformation/WorkRadio";
 import HadCovidRadio from "./UserInformation/HadCovidRadio";
+import DateIcon from "./DateIcon/DateIcon";
 function ListItem({ data, index, toggle }) {
   return (
     <div className={"item " + (data.open ? "open" : "")} key={index}>
@@ -17,6 +18,10 @@ function ListItem({ data, index, toggle }) {
         <div>
           <WorkRadio userData={data} />
           <HadCovidRadio userData={data} />
+          <DateIcon
+            date={data.had_covid_at}
+            header="When did you have covid 19?"
+          />
         </div>
       </div>
     </div>
