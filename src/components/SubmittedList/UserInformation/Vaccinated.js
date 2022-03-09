@@ -4,11 +4,11 @@ import RadioUnchecked from "../RadioIcons/RadioUnchecked";
 
 const Vaccinated = (props) => {
   const data = props.userData;
-  console.log(data.vaccinated);
+
   return (
-    <div className={styles["hadCovid__container"]}>
+    <div className={styles["vaccinated__container"]}>
       <div className={styles.flex}>
-        <p className={styles["had__Covid"]}>Have you been vaccinated?</p>
+        <p className={styles["had__vaccinated"]}>Have you been vaccinated?</p>
         <div className={styles.radioContainer}>
           {data.vaccinated ? <RadioChecked /> : <RadioUnchecked />}
           <label className={styles.radio}>Yes</label>
