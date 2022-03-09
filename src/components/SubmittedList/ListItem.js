@@ -6,7 +6,7 @@ function ListItem({ data, index, toggle }) {
       <div className="top" onClick={() => toggle(index)}>
         {index + 1}
       </div>
-      <div className="content">content here</div>
+      <div className="content">{data.first_name}</div>
     </div>
   );
 }
